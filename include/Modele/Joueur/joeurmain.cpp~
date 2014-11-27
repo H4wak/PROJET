@@ -1,0 +1,29 @@
+#include <string> // pour les chaines de caracteres
+#include <iostream> // pour les entrées/sorties
+#include <fstream> // pour la gestion des flux de fichier
+#include <sstream> // pour la gestion des flux de string
+using namespace std;
+
+#include "Joueur.hpp"
+int main()
+{
+	Personnage guerrier;
+	
+	Joueur* Pierre = new Joueur("Pierre", guerrier,"DeckGuerrier.txt");
+	
+	cout << Pierre->getNom() << endl;
+	
+	Pierre->setNom("cheval") ;
+
+	cout << Pierre->getNom() << endl;
+	
+	cout << Pierre->getPersonnage().getPdm() << endl;
+	
+	Pierre->getPersonnage().setPdm(45);
+	
+	cout << Pierre->getPersonnage().getPdm() << endl;
+	
+	
+
+  return 0;
+}
