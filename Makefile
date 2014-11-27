@@ -1,8 +1,10 @@
 FLAGS = -g -pedantic -Wall -Wextra
 
-all:Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o 
+all: exec clean
+exec :Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o 
 	g++ $(FLAGS)  Main.cpp -o Main.exe
-
+	
+	
 Carte.o: 
 	g++ $(FLAGS) include/Modele/Joueur/Deck/Carte/Carte.hpp -o bin/Modele/Joueur/Deck/Carte/Carte.o -c
 

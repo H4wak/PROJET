@@ -58,7 +58,7 @@ Deck::Deck(string fichier)
   			
 			i++;
 			
-			cout << c->toString() << endl;
+			//cout << c->toString() << endl;
 		}
 	}
 	else

@@ -219,6 +219,11 @@ void VueConsole::afficherChoixPouvoirInduction()
 	cout << "Choisissez la carte adverse qui subira L'INDUCTION NOEUTHERIENNE ! MUAHAHAHAHHA!" << endl;
 }
 
+/////////////////////////////////////////////////////////////////////////
+void VueConsole::afficherErreurChoix()
+{
+	cout << "Veuillez entrer un choix valide ! :)" << endl;
+}
 
 
 

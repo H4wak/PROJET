@@ -95,37 +95,47 @@ void LancementPartie::lancerPartie()
 			this->j1 = new JXR(nom1,"DeckJXR.txt");
 			break;
 		}
+		
+		default:{
+			this->j1 = new JXR(nom2,"DeckJXR.txt");
+			break;
+		}
 	}
 	
 	switch (num2)
 	{
 		case 1: {
-			this->j2 = new Guerrier(nom1,"DeckGuerrier.txt");
+			this->j2 = new Guerrier(nom2,"DeckGuerrier.txt");
 			break;
 		}
 		
 		case 2: {
-			this->j2 = new Chasseur(nom1,"DeckChasseur.txt");
+			this->j2 = new Chasseur(nom2,"DeckChasseur.txt");
 			break;
 		}
 		
 		case 3: {
-			this->j2 = new Mage(nom1,"DeckMage.txt");
+			this->j2 = new Mage(nom2,"DeckMage.txt");
 			break;
 		}
 		
 		case 4: {
-			this->j2 = new Demoniste(nom1,"DeckDemoniste.txt");
+			this->j2 = new Demoniste(nom2,"DeckDemoniste.txt");
 			break;
 		}
 		
 		case 5: {
-			this->j2 = new Pretre(nom1,"DeckPretre.txt");
+			this->j2 = new Pretre(nom2,"DeckPretre.txt");
 			break;
 		}
 		
 		case 666:{
-			this->j2 = new JXR(nom1,"DeckJXR.txt");
+			this->j2 = new JXR(nom2,"DeckJXR.txt");
+			break;
+		}
+		
+		default:{
+			this->j2 = new JXR(nom2,"DeckJXR.txt");
 			break;
 		}
 	}
