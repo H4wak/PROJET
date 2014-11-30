@@ -1,5 +1,5 @@
 /**
-* Fichier Chasseur
+* Fichier Chasseur.hpp
 * @author Pierre Gaultier & Theo Dolez
 */
 
@@ -15,11 +15,11 @@
 
 class Chasseur: public Joueur
 {   
-   private :
     
    public :
-      Chasseur(std::string nom, std::string fichier);
-      ~Chasseur();
+	//Constructeur/Destructeur
+	Chasseur(std::string nom, std::string fichier);
+	~Chasseur();
    
   
 };

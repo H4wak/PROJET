@@ -12,7 +12,7 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Constructeur.
+* Constructeur qui associe au Mage le comportement du pouvoir du Mage
 */
 Mage::Mage(string nom,string fichier): Joueur(nom,fichier)
 {

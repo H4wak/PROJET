@@ -15,9 +15,9 @@
 
 class Pretre: public Joueur
 {   
-   private :
-    
+
    public :
+      //Constructeur/Destructeur
       Pretre(std::string nom, std::string fichier);
       ~Pretre();
    

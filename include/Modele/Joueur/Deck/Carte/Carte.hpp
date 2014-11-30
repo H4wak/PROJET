@@ -1,7 +1,7 @@
 /* 
    Fichier Carte.hpp
-
    Définition du type Carte
+* @author Pierre Gaultier, Théo Dolez
 */
 
 #ifndef CARTE_HPP
@@ -12,10 +12,7 @@
 
 /******************************************************************************/
 
-/**
-* La classe Carte représente une Carte.
-* @author Pierre Gaultier, Théo Dolez
-*/
+
 
 class Carte
 {
@@ -32,61 +29,45 @@ class Carte
    int fct;
    std::string description;   
    
-   
    public :
-	/*
-	* Constructeur.
-	* Créer une carte.
-	* @param pdv Point de vie de la carte.
-	* @param pa Point d'attaque de la carte.
-	* @param nom Nom de la carte.
-	* @param coutmana Cout en mana de la carte.
-	* @param charge Booléen, vrai si la carte à la capacité Charge.
-	* @param provoc Booléen, vrai si la carte à la capacité Provocation.
-	*/
+
   	Carte();
-	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc, bool sort, int f, std::string des); // constructeur par défaut 
+	Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool provoc, bool sort, int f, std::string des); //construceur
 	~Carte(); // destructeur
 
-  int getPdv();
-  void setPdv(int i);
+  	int getPdv();
+	  void setPdv(int i);
   
-  int getPdvmax();
-  void setPdvmax(int i);
+  	int getPdvmax();
+  	void setPdvmax(int i);
+		
+  	int getPa();
+	void setPa(int i);
 
-  int getPa();
-  void setPa(int i);
+	std::string getNom();
+	void setNom(std::string n);
 
-  std::string getNom();
-  void setNom(std::string n);
+	int getCoutmana();
+	void setCoutmana(int i);
+  
+	bool getCharge();
+	void setCharge(bool c);
+  
+	bool getProvoc();
+	void setProvoc(bool p);
+	  
+	bool getMalinvoc();
+	void setMalinvoc(bool m);
+	  
+	bool getSortilege();
+	void setSortilege(bool m);
+	  
+	int getFct();
+	void setFct(int i);
+	std::string getDescription();
+	void setDescription(std::string des);
 
-  int getCoutmana();
-  void setCoutmana(int i);
-  
-  bool getCharge();
-  void setCharge(bool c);
-  
-  bool getProvoc();
-  void setProvoc(bool p);
-  
-  bool getMalinvoc();
-  void setMalinvoc(bool m);
-  
-  bool getSortilege();
-  void setSortilege(bool m);
-  
-  int getFct();
-  void setFct(int i);
-  
-  std::string getDescription();
-  void setDescription(std::string des);
-  
-  
-
-
-  std::string toString();
-
-
+	std::string toString();
 			
 }; // class Carte
 /******************************************************************************/

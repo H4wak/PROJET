@@ -15,9 +15,8 @@
 
 class Mage: public Joueur
 {   
-   private :
-    
    public :
+      //Constructeur/Destructeur
       Mage(std::string nom, std::string fichier);
       ~Mage();
    

@@ -16,26 +16,30 @@
 #include <vector>       // std::vector
 #include <ctime>        // std::time
 #include <cstdlib>      // std::rand, std::srand
-
+#include <unistd.h>
+#include <time.h>
 #include "Carte/Carte.hpp"
 
 /******************************************************************************/
 class Deck
 {
    private :
-      int taille;
-      std::stack<Carte> d;
+      	int taille;
+      	std::stack<Carte> d;
       
    public :
-   	  
-   	  Deck(std::string fichier);
-   	  ~Deck();
-   	  
-   	  int getTaille();
-   	  void setTaille(int t);
-   	  std::stack<Carte> getStack();
-   	  
-   	  Carte tirerCarte();
+   	
+	//Constructeurs/Destructeur
+   	Deck(std::string fichier);
+   	~Deck();
+   	
+	//Getters/Setters
+   	int getTaille();
+   	void setTaille(int t);
+   	std::stack<Carte> getStack();
+   	
+	// Depile la premiere carte de la pile et la renvoie
+   	Carte tirerCarte();
    	  
 };
 

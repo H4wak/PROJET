@@ -1,7 +1,7 @@
 /* 
    Fichier Deck.hpp
-
    Définition du type Deck
+* @author Pierre Gaultier & Theo Dolez
 */
 
 #ifndef DECK_HPP
@@ -24,19 +24,22 @@
 class Deck
 {
    private :
-      int taille;
-      std::stack<Carte> d;
+      	int taille;
+      	std::stack<Carte> d;
       
    public :
-   	  
-   	  Deck(std::string fichier);
-   	  ~Deck();
-   	  
-   	  int getTaille();
-   	  void setTaille(int t);
-   	  std::stack<Carte> getStack();
-   	  
-   	  Carte tirerCarte();
+   	
+	//Constructeurs/Destructeur
+   	Deck(std::string fichier);
+   	~Deck();
+   	
+	//Getters/Setters
+   	int getTaille();
+   	void setTaille(int t);
+   	std::stack<Carte> getStack();
+   	
+	// Depile la premiere carte de la pile et la renvoie
+   	Carte tirerCarte();
    	  
 };
 

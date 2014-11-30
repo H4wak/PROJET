@@ -15,9 +15,9 @@
 
 class Demoniste: public Joueur
 {   
-   private :
-    
+
    public :
+      //Constructeur/Destructeur
       Demoniste(std::string nom, std::string fichier);
       ~Demoniste();
    

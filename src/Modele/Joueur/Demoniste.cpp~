@@ -24,7 +24,7 @@ Demoniste::Demoniste(string nom,string fichier): Joueur(nom,fichier)
 /**
 * Destructeur
 */
-Guerrier::~Guerrier()
+Demoniste::~Demoniste()
 {
 }
 

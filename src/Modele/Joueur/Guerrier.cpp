@@ -12,7 +12,7 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Constructeur.
+* Constructeur qui associe au Guerrier le comportement du pouvoir du Guerrier
 */
 Guerrier::Guerrier(string nom,string fichier): Joueur(nom,fichier)
 {

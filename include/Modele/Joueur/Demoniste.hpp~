@@ -8,7 +8,7 @@
 
 #include <string> // pour le type std::string
 #include "Joueur.hpp"
-#include "../../Modele/Joueur/ComportementPouvoirDemoniste.hpp"
+#include "../../Controleur/ComportementPouvoir/ComportementPouvoirDemoniste.hpp"
 
 
 /******************************************************************************/
@@ -18,6 +18,7 @@ class Demoniste: public Joueur
    private :
     
    public :
+      //Constructeur/Destructeur
       Demoniste(std::string nom, std::string fichier);
       ~Demoniste();
    
