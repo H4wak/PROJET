@@ -142,7 +142,7 @@ VueConsole Jeu::getVue()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui appelle la methode finTour() sur le tour courant
+* Methode qui appelle la méthode finTour() sur le tour courant
 */
 void Jeu::finTour()
 {
@@ -208,6 +208,12 @@ void Jeu::jouer()
 }
 
 /////////////////////////////////////////////////////////////////////////
+
+/**
+* Méthode qui gère l'attaque d'une Carte contre une autre Carte
+* @param index1 l'index de la carte du joueur courant
+* @param index2 l'index de la carte du joueur adverse
+*/
 void Jeu::attaqueCvC(int index1, int index2)
 {
 	int pdv1,pdv2,attac1,attac2;
@@ -260,6 +266,10 @@ void Jeu::attaqueCvC(int index1, int index2)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui gère l'attaque d'une Carte contre le joueur ennemi.
+* @param index1 l'index de la carte du joueur courant.
+*/
 void Jeu::attaqueCvJ(int index1)
 {
 	if ( joueurCourant->getBoard()->at(index1-1).getMalinvoc() == true )
@@ -301,6 +311,9 @@ void Jeu::attaqueCvJ(int index1)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode utilisée au début du tout d'un jour pour enlever le Mal d'invocation de tout ses serviteurs.
+*/
 void Jeu::enleverMalinvoc()
 {
 	int i,j,size1,size2;
@@ -329,7 +342,11 @@ void Jeu::enleverMalinvoc()
 }
 		
 		
-/////////////////////////////////////////////////////////////////////////		
+/////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui teste si le Joueur a assez de mana pour continuer de faire des actions. 
+* @return nomana , true si le Joueur na plus assez de Mana, false si le Joueur a suffisamment de Mana.
+*/		
 bool Jeu::testNoMana()
 {
 	int pmr,size;
@@ -357,6 +374,10 @@ bool Jeu::testNoMana()
 }
 		
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui teste si le Joueur possède des Serviteurs qui peuvent attaquer.
+* @return noatt , true si tout les serviteurs ne peuvent plus attaquer, false si au moins un serviteur peut attaquer.
+*/	
 bool Jeu::testNoAttaque()
 {
 	
@@ -374,6 +395,10 @@ bool Jeu::testNoAttaque()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui teste si le Joueur adverse possède des serviteurs avec Provocation.
+* @return provoc , true si le Joueur adverse a au moins un serviteur avec Provocation, false si le Joueur adverse n'a pas de serviteurs avec Provocation.
+*/	
 bool Jeu::testProvoc()
 {
 	bool provoc = false;
@@ -390,12 +415,20 @@ bool Jeu::testProvoc()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui enregistre un Observer dans la liste d'Observers.
+* @param o l'Observer à ajouter dans la liste.
+*/	
 void Jeu::enregistrerObs(Observer* O)
 {
   obs->push_back(O);
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui supprime un Observer de la liste d'Observers.
+* @param o l'Observer à supprimer dans la liste.
+*/	
 void Jeu::supprimerObs(Observer* O)
 {
   
@@ -408,6 +441,9 @@ void Jeu::supprimerObs(Observer* O)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui actualise tout les Observers de la liste d'Observers.
+*/	
 void Jeu::notifierObs()
 { 
   
@@ -417,6 +453,10 @@ void Jeu::notifierObs()
 	}
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui gère les actions de toutes les cartes sortilège.
+* @param f entier correspondant à un sortilège précis. (attribut de Carte)
+*/	
 void Jeu::fonctionsCarte(int f)
 {
 	switch (f)
