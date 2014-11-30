@@ -58,6 +58,7 @@ class Jeu : public Sujet
 		Jeu(Joueur* j1,Joueur* j2);
 		~Jeu();
 		
+		// Getters/Setters
 		Joueur* getJoueurCourant();
 		Joueur* getJoueurAutre();
 		Etat* getEtatCourant();
@@ -65,21 +66,29 @@ class Jeu : public Sujet
 		Etat* getEtatNoAttaque();
 		Etat* getEtatDoubleNo();
 		Etat* getEtatDebutTour();
+		void setEtat(Etat* e); 
 		VueConsole getVue();
+
 		
+		// méthodes d'attaque/test/changement d'état 
 		void attaqueCvC(int index1, int index2);
 		void attaqueCvJ(int index);
 		void enleverMalinvoc();
 		bool testNoMana();
 		bool testProvoc();
 		bool testNoAttaque();
-		void echangeJoueur(); // echange les deux joueurs dans joueurCourant et joueurAutre
-		void setEtat(Etat* e); //setEtat
-		void finTour(); 
-		void jouer();// lance le tour
+		void echangeJoueur(); 
+		void finTour();
+
+		// méthode qui lance le jeu 
+		void jouer();
+
+		// méthodes liés aux Observers
 		void enregistrerObs(Observer* O);
 		void supprimerObs(Observer* O);
 		void notifierObs();
+
+		// méthode destinée aux sortilèges
 		void fonctionsCarte(int f);
 		
 		
