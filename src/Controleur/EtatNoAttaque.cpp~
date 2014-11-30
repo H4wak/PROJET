@@ -110,7 +110,7 @@ int EtatNoAttaque::afficherChoixEtat()
 		   		 	else
 		   		 	{
 		   		 		int fct,cm;
-		   		 		fct = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct());
+		   		 		fct = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getFct();
 		   		 		cm = jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana();
 		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
 		   		 		jeu->fonctionsCarte(fct);

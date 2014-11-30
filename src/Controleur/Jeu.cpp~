@@ -314,7 +314,7 @@ void Jeu::enleverMalinvoc()
 		}
 	}
 	
-	size2 = joueurAutre->getBoard()->size()
+	size2 = joueurAutre->getBoard()->size();
 	for (j = 0; j < size2 ; j++ )
 	{
 		if ( joueurAutre->getBoard()->at(j).getMalinvoc() == true )
@@ -361,8 +361,8 @@ bool Jeu::testNoAttaque()
 {
 	
 	bool noatt = true;
-	
-	for ( int i = 0; i < joueurCourant->getBoard()->size() ; i++ )
+	int size = joueurCourant->getBoard()->size();
+	for ( int i = 0; i < size ; i++ )
 	{
 		if ( joueurCourant->getBoard()->at(i).getMalinvoc() == false )
 		{
@@ -377,8 +377,8 @@ bool Jeu::testNoAttaque()
 bool Jeu::testProvoc()
 {
 	bool provoc = false;
-	
-	for ( int i = 0; i < joueurAutre->getBoard()->size() ; i++ )
+	int size = joueurAutre->getBoard()->size();
+	for ( int i = 0; i < size ; i++ )
 	{
 		if ( joueurAutre->getBoard()->at(i).getProvoc() == true )
 		{
@@ -399,7 +399,8 @@ void Jeu::enregistrerObs(Observer* O)
 void Jeu::supprimerObs(Observer* O)
 {
   int i = 0;
-  for(i;i<obs->size()-1;i++){
+  int size = obs->size();
+  for( i ; i < size ; i++ ){
 	if (obs->at(i) == O){
 		obs->erase(obs->begin()+i);
 		}
@@ -410,8 +411,8 @@ void Jeu::supprimerObs(Observer* O)
 void Jeu::notifierObs()
 { 
   int i = 0;
-  
-  for( i ; i < obs->size() ; i++){
+  int size = obs->size();
+  for( i ; i < size ; i++){
 	obs->at(i)->actualiser();
 	}
 }
@@ -588,7 +589,7 @@ void Jeu::fonctionsCarte(int f)
 		////// Choc de Flammes
 		case 24: {
 			
-			int size1,size2,pdv;
+			int size1,pdv;
 			size1 = joueurAutre->getBoard()->size();
 			
 			

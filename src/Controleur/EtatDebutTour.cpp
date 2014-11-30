@@ -56,7 +56,7 @@ void EtatDebutTour::finTour()
 int EtatDebutTour::afficherChoixEtat()
 {
 	int choix = -1;
-	int choixcarte;
+	
 	int choixcarte1, choixcarte2;
 	
 	

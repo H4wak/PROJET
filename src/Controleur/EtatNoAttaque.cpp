@@ -53,8 +53,7 @@ void EtatNoAttaque::finTour()
 int EtatNoAttaque::afficherChoixEtat()
 {
 	int choix = -1;
-	int choixcarte;
-	int choixcarte1, choixcarte2;
+	
 	bool malinvoc;
 	
 	
