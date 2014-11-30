@@ -58,17 +58,14 @@ int EtatDebutTour::afficherChoixEtat()
 	int choix = -1;
 	int choixcarte;
 	int choixcarte1, choixcarte2;
-	bool garde;
+	
 	
 	cout << "\nETAT DEBUT TOUR\n" << endl;
 	
 	jeu->getVue().afficherChoixDebutTour();
 	choix = jeu->getVue().getChoixJoueur();
 	
-	while(garde == true)
-	{
-		
-		garde = false;
+	
 		switch (choix)
 		{
 		    case 1: {
@@ -233,16 +230,9 @@ int EtatDebutTour::afficherChoixEtat()
     				break;	
     		}
     		
-    		default:
-    		{
-    			garde = true;
-    			jeu->getVue().afficherErreurChoix();
-    			choix = jeu->getVue().getChoixJoueur();
-    			break;
     		
-    		}
 		}
-	}
+	
 	return choix;
 
 

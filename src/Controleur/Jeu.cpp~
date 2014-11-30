@@ -303,16 +303,19 @@ void Jeu::attaqueCvJ(int index1)
 /////////////////////////////////////////////////////////////////////////
 void Jeu::enleverMalinvoc()
 {
-	int i,j;
-	for ( i = 0; i < joueurCourant->getBoard()->size() ; i++ )
+	int i,j,size1,size2;
+	size1 = joueurCourant->getBoard()->size();
+
+	for ( i = 0; i < size1; i++ )
 	{
 		if ( joueurCourant->getBoard()->at(i).getMalinvoc() == true )
 		{
 			joueurCourant->getBoard()->at(i).setMalinvoc(false);
 		}
 	}
-		
-	for (j = 0; j < joueurAutre->getBoard()->size() ; j++ )
+	
+	size2 = joueurAutre->getBoard()->size()
+	for (j = 0; j < size2 ; j++ )
 	{
 		if ( joueurAutre->getBoard()->at(j).getMalinvoc() == true )
 		{
@@ -329,10 +332,11 @@ void Jeu::enleverMalinvoc()
 /////////////////////////////////////////////////////////////////////////		
 bool Jeu::testNoMana()
 {
-	int pmr;
+	int pmr,size;
 	bool nomana = true;
 	pmr = joueurCourant->getPdmTour();
-	for ( int i = 0; i < joueurCourant->getMain()->size() ; i++ )
+	size = joueurCourant->getMain()->size();
+	for ( int i = 0; i < size ; i++ )
 	{
 		if ( joueurCourant->getMain()->at(i).getCoutmana() <= pmr )
 		{
@@ -416,12 +420,7 @@ void Jeu::fonctionsCarte(int f)
 {
 	switch (f)
 	{
-		case 1:
-		{
-			cout << "VOUS ALLEZ MOURIR" << endl;
-			break;
-		}
-		
+				
 		
 		/////// Intelligence des Arcanes
 		case 10:

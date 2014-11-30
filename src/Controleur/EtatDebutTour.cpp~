@@ -67,7 +67,7 @@ int EtatDebutTour::afficherChoixEtat()
 	
 	while(garde == true)
 	{
-		choix = jeu->getVue().getChoixJoueur();
+		
 		garde = false;
 		switch (choix)
 		{
@@ -237,6 +237,7 @@ int EtatDebutTour::afficherChoixEtat()
     		{
     			garde = true;
     			jeu->getVue().afficherErreurChoix();
+    			choix = jeu->getVue().getChoixJoueur();
     			break;
     		
     		}
