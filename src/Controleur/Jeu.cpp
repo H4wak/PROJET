@@ -26,6 +26,7 @@ Jeu::Jeu(Joueur* j1, Joueur* j2)
    this->etatDoubleNo = new EtatDoubleNo(this);  
    this->etatCourant = this->etatDebutTour;
    this->obs = new vector<Observer*>();
+   this->vue = new VueConsole();
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -39,6 +40,7 @@ Jeu::~Jeu()
 		delete(etatNoMana);
 		delete(etatDoubleNo);
 		delete(obs);
+		delete(vue);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -138,7 +140,7 @@ void Jeu::setEtat(Etat* e)
 * Methode qui retourne la vue
 * @return vue la vue
 */
-VueConsole Jeu::getVue()
+VueConsole* Jeu::getVue()
 {
 	return this->vue;
 }
@@ -190,8 +192,8 @@ void Jeu::jouer()
   
 	enleverMalinvoc();
 	
-	vue.afficherDebutTour(joueurCourant);
-	vue.afficher2Board(joueurCourant,joueurAutre);
+	vue->afficherDebutTour(joueurCourant);
+	vue->afficher2Board(joueurCourant,joueurAutre);
 		
 	int choix = -1;
 	
@@ -220,7 +222,7 @@ void Jeu::jouer()
 
 	if (finJeu != true)
 	{
-		vue.afficherFinTour();
+		vue->afficherFinTour();
 	
 		usleep(1000000);
 	
@@ -501,8 +503,8 @@ void Jeu::fonctionsCarte(int f)
 		////// Tir des Arcanes
 		case 20:
 		{
-			vue.afficherChoixPouvoirMage();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixPouvoirMage();
+			int choix = vue->getChoixJoueur();
 			switch (choix)
 			{
 		  	  case 1: {
@@ -532,7 +534,7 @@ void Jeu::fonctionsCarte(int f)
 		    	}
 		     default:  {
 	
-	    				choix = vue.getChoixJoueur();
+	    				choix = vue->getChoixJoueur();
 	    				bool bonnecarte = false;	
     					int size = joueurAutre->getBoard()->size();  
     					while ( bonnecarte == false )
@@ -543,7 +545,7 @@ void Jeu::fonctionsCarte(int f)
     						}
     						else
     						{	
-								choix = vue.getChoixJoueur();
+								choix = vue->getChoixJoueur();
       						}   				
     					}   
 						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
@@ -562,8 +564,8 @@ void Jeu::fonctionsCarte(int f)
 		///////// Voile de Mort
 		case 21: {
 		
-			vue.afficherChoixCarte();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixCarte();
+			int choix = vue->getChoixJoueur();
 	    	bool bonnecarte = false;	
     		int size = joueurAutre->getBoard()->size();  
     		while ( bonnecarte == false )
@@ -574,7 +576,7 @@ void Jeu::fonctionsCarte(int f)
     			}
     			else
     			{	
-					choix = vue.getChoixJoueur();
+					choix = vue->getChoixJoueur();
       			}   				
     		}   
 			int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
@@ -591,8 +593,8 @@ void Jeu::fonctionsCarte(int f)
 		///////// Drain de Vie
 		case 22: {
 		
-			vue.afficherChoixPouvoirMage();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixPouvoirMage();
+			int choix = vue->getChoixJoueur();
 			switch (choix)
 			{
 		  	  case 1: {
@@ -622,7 +624,7 @@ void Jeu::fonctionsCarte(int f)
 		    	}
 		     default:  {
 	
-	    				choix = vue.getChoixJoueur();
+	    				choix = vue->getChoixJoueur();
 	    				bool bonnecarte = false;	
     					int size = joueurAutre->getBoard()->size();  
     					while ( bonnecarte == false )
@@ -633,7 +635,7 @@ void Jeu::fonctionsCarte(int f)
     						}
     						else
     						{	
-								choix = vue.getChoixJoueur();
+								choix = vue->getChoixJoueur();
       						}   				
     					}   
 						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
@@ -657,8 +659,8 @@ void Jeu::fonctionsCarte(int f)
 		////// Boule de Feu
 		case 23:
 		{
-			vue.afficherChoixPouvoirMage();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixPouvoirMage();
+			int choix = vue->getChoixJoueur();
 			switch (choix)
 			{
 		  	  case 1: {
@@ -687,7 +689,7 @@ void Jeu::fonctionsCarte(int f)
 		    	}
 		     default:  {
 	
-	    				choix = vue.getChoixJoueur();
+	    				choix = vue->getChoixJoueur();
 	    				bool bonnecarte = false;	
     					int size = joueurAutre->getBoard()->size();  
     					while ( bonnecarte == false )
@@ -698,7 +700,7 @@ void Jeu::fonctionsCarte(int f)
     						}
     						else
     						{	
-								choix = vue.getChoixJoueur();
+								choix = vue->getChoixJoueur();
       						}   				
     					}   
 						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
@@ -852,8 +854,8 @@ void Jeu::fonctionsCarte(int f)
 		////// Courroux Bestial
 		case 60: {
 		
-			vue.afficherChoixCarte();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixCarte();
+			int choix = vue->getChoixJoueur();
 			bool bonnecarte = false;
 			int size = joueurCourant->getBoard()->size(); 
 			while ( bonnecarte == false )
@@ -864,7 +866,7 @@ void Jeu::fonctionsCarte(int f)
     			}
     			else
     			{	
-					choix = vue.getChoixJoueur();
+					choix = vue->getChoixJoueur();
       			}   				
     		}
     		
@@ -876,9 +878,9 @@ void Jeu::fonctionsCarte(int f)
     	////// Esprit Divin
 		case 61: {
 		
-			vue.afficherChoixCarte();
+			vue->afficherChoixCarte();
 			int pdv1,pdv2;
-			int choix = vue.getChoixJoueur();
+			int choix = vue->getChoixJoueur();
 			bool bonnecarte = false;
 			int size = joueurCourant->getBoard()->size(); 
 			while ( bonnecarte == false )
@@ -889,7 +891,7 @@ void Jeu::fonctionsCarte(int f)
     			}
     			else
     			{	
-					choix = vue.getChoixJoueur();
+					choix = vue->getChoixJoueur();
       			}   				
     		}
     		
@@ -904,8 +906,8 @@ void Jeu::fonctionsCarte(int f)
 		////// Marque du chasseur
 		case 80:
 		{
-			vue.afficherChoixCarte();
-			int choix = vue.getChoixJoueur();
+			vue->afficherChoixCarte();
+			int choix = vue->getChoixJoueur();
 	    	bool bonnecarte = false;	
     		int size = joueurAutre->getBoard()->size();  
     		while ( bonnecarte == false )
@@ -916,7 +918,7 @@ void Jeu::fonctionsCarte(int f)
     			}
     			else
     			{	
-					choix = vue.getChoixJoueur();
+					choix = vue->getChoixJoueur();
       			}   				
     		}
     		   

@@ -49,7 +49,7 @@ class Jeu : public Sujet
 		EtatNoMana* etatNoMana;
 		EtatNoAttaque* etatNoAttaque;
 		EtatDoubleNo* etatDoubleNo;
-		VueConsole vue;
+		VueConsole* vue;
 		vector<Observer*>* obs;     
 
  
@@ -67,7 +67,7 @@ class Jeu : public Sujet
 		Etat* getEtatDoubleNo();
 		Etat* getEtatDebutTour();
 		void setEtat(Etat* e); 
-		VueConsole getVue();
+		VueConsole* getVue();
 
 		
 		// méthodes d'attaque/test/changement d'état 

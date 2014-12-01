@@ -19,13 +19,21 @@ ComportementPouvoirMage::ComportementPouvoirMage(Joueur* j)
 	this->vue =new VueConsole();;
 }
 
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur
+*/
+ComportementPouvoirMage::~ComportementPouvoirMage()
+{
+  delete(vue);
+}
 
 /**
 * Methode qui applique le pouvoir heroique du Mage
 */
 void ComportementPouvoirMage::pouvoir()
 {
-  cout << "Vous l'avez cherché!!!"<< endl;
+  
 	this->vue->afficherChoixPouvoirMage();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)

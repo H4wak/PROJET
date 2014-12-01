@@ -16,9 +16,17 @@ using namespace std; // seulement dans le .cpp !
 ComportementPouvoirJXR::ComportementPouvoirJXR(Joueur* j)
 {
   this->joueur = j;
-	this->vue =new VueConsole();;
+
 }
 
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur
+*/
+ComportementPouvoirJXR::~ComportementPouvoirJXR()
+{
+
+}
 
 /**
 * Methode qui applique le pouvoir heroique de JXR

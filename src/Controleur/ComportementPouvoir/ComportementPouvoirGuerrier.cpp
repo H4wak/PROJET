@@ -25,7 +25,7 @@ ComportementPouvoirGuerrier::ComportementPouvoirGuerrier(Joueur* j)
 void ComportementPouvoirGuerrier::pouvoir()
 {
    this->joueur->setARMURE(this->joueur->getArmure()+2);
-   cout << "POUR HURLENFER!";
+  
 }
 
 

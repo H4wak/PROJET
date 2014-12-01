@@ -62,19 +62,19 @@ int EtatNoAttaque::afficherChoixEtat()
 	
 	cout << "\nETAT NO ATTAQUE\n" << endl;
 	
-	jeu->getVue().afficherChoixNoAttaque();
-	choix = jeu->getVue().getChoixJoueur();
+	jeu->getVue()->afficherChoixNoAttaque();
+	choix = jeu->getVue()->getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {
-					jeu->getVue().afficherMain(jeu->getJoueurCourant());
+					jeu->getVue()->afficherMain(jeu->getJoueurCourant());
 					break;
 		    }
 		    case 2:  {
-		   		jeu->getVue().afficherJouerCarte();
+		   		jeu->getVue()->afficherJouerCarte();
 		   		
 		   		bool bonnecarte0 = false;
-    			int choixcarte0 = jeu->getVue().getChoixJoueur();	
+    			int choixcarte0 = jeu->getVue()->getChoixJoueur();	
     			int size0 = jeu->getJoueurCourant()->getMain()->size();  
     			
 		   		
@@ -89,8 +89,8 @@ int EtatNoAttaque::afficherChoixEtat()
     				else
    					{	
    						
-   						jeu->getVue().afficherJouerCarte();
-   						choixcarte0 = jeu->getVue().getChoixJoueur();
+   						jeu->getVue()->afficherJouerCarte();
+   						choixcarte0 = jeu->getVue()->getChoixJoueur();
    						
    						
    					}   				
@@ -106,7 +106,7 @@ int EtatNoAttaque::afficherChoixEtat()
 		   				jeu->getJoueurCourant()->ajouterBoard(jeu->getJoueurCourant()->getMain()->at(choixcarte0-1));
 		   				jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - jeu->getJoueurCourant()->getMain()->at(choixcarte0-1).getCoutmana());
 		   			
-		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+		   				jeu->getVue()->afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
 		   		 	}
 		   		 	else
@@ -117,7 +117,7 @@ int EtatNoAttaque::afficherChoixEtat()
 		   		 		jeu->getJoueurCourant()->supprimerMain(choixcarte0);
 		   		 		jeu->fonctionsCarte(fct);
 		   			 	jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - cm);
-		   				jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour()); 	
+		   				jeu->getVue()->afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour()); 	
 		   		 	
 		   		 	}
 		   		 	
@@ -143,23 +143,23 @@ int EtatNoAttaque::afficherChoixEtat()
 		   		 	
 		   		}else{
 		   			
-		   			jeu->getVue().afficherPasAssezDeMana();
+		   			jeu->getVue()->afficherPasAssezDeMana();
 		      	}
 		      break;
 		    }
 		    case 3: {	
-				  jeu->getVue().afficherBoard(jeu->getJoueurCourant());
+				  jeu->getVue()->afficherBoard(jeu->getJoueurCourant());
 				  break;
     		}
     		case 4:
     		{
-					jeu->getVue().afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
+					jeu->getVue()->afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
     				break;
     		}
     		case 5:
     		{
-					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
-					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
+					jeu->getVue()->afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue()->afficherPersonnageAutre(jeu->getJoueurAutre());
 					
     				break;
     		}
@@ -170,12 +170,12 @@ int EtatNoAttaque::afficherChoixEtat()
     					jeu->getJoueurCourant()->utiliserPouvoir();
 						jeu->getJoueurCourant()->setPouvoirUtilise(true);
 						jeu->getJoueurCourant()->setPDMTour(jeu->getJoueurCourant()->getPdmTour() - 2);
-						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+						jeu->getVue()->afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 					else
 					{
-						jeu->getVue().afficherPasAssezDeMana();
-						jeu->getVue().afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
+						jeu->getVue()->afficherPasAssezDeMana();
+						jeu->getVue()->afficherPdmnRestant(jeu->getJoueurCourant()->getPdmTour());
 					}
 
 					if (jeu->testNoMana() == true )

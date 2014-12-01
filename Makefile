@@ -1,7 +1,7 @@
 FLAGS = -g -pedantic -Wall -Wextra
 
 all: exec clean
-exec :Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o 
+exec :Joueur.o Deck.o Carte.o ComportementPouvoir.o ComportementPouvoirGuerrier.o ComportementPouvoirJXR.o ComportementPouvoirChasseur.o ComportementPouvoirPretre.o ComportementPouvoirMage.o ComportementPouvoirDemoniste.o Guerrier.o JXR.o Chasseur.o Pretre.o Mage.o Demoniste.o Jeu.o Etat.o EtatDebutTour.o EtatNoAttaque.o EtatDoubleNo.o EtatNoMana.o Sujet.o Observer.o FinDeJeu.o VueConsole.o LancementPartie.o 
 	g++ $(FLAGS)  Main.cpp -o Main.exe
 	
 	
@@ -16,6 +16,9 @@ ComportementPouvoir.o:
 
 ComportementPouvoirGuerrier.o:ComportementPouvoir.o 
 	g++ $(FLAGS) include/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.hpp -o bin/Controleur/ComportementPouvoir/ComportementPouvoirGuerrier.o -c
+
+ComportementPouvoirJXR.o:ComportementPouvoir.o 
+	g++ $(FLAGS) include/Controleur/ComportementPouvoir/ComportementPouvoirJXR.hpp -o bin/Controleur/ComportementPouvoir/ComportementPouvoirJXR.o -c
 
 ComportementPouvoirChasseur.o:ComportementPouvoir.o
 	g++ $(FLAGS) include/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.hpp -o bin/Controleur/ComportementPouvoir/ComportementPouvoirChasseur.o -c
@@ -61,6 +64,9 @@ EtatNoAttaque.o:Etat.o
 
 Guerrier.o: Joueur.o
 	g++ $(FLAGS) include/Modele/Joueur/Guerrier.hpp -o bin/Modele/Joueur/Guerrier.o -c
+
+JXR.o: Joueur.o
+	g++ $(FLAGS) include/Modele/Joueur/JXR.hpp -o bin/Modele/Joueur/JXR.o -c
 
 Chasseur.o: Joueur.o
 	g++ $(FLAGS) include/Modele/Joueur/Chasseur.hpp -o bin/Modele/Joueur/Chasseur.o -c

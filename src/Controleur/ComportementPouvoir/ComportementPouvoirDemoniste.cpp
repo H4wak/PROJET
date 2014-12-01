@@ -26,7 +26,7 @@ void ComportementPouvoirDemoniste::pouvoir()
 {
    this->joueur->setPDV(this->joueur->getPdv()-2);
    this->joueur->ajouterMain(this->joueur->getDeck()->tirerCarte());
-   cout << "CONNECTION BLBLBLBL";
+  
 }
 
 

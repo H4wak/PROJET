@@ -60,28 +60,28 @@ int EtatDoubleNo::afficherChoixEtat()
 	
 	cout << "\nETAT DOUBLE NO\n" << endl;
 	
-	jeu->getVue().afficherChoixDoubleNo();
-	choix = jeu->getVue().getChoixJoueur();
+	jeu->getVue()->afficherChoixDoubleNo();
+	choix = jeu->getVue()->getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {
-					jeu->getVue().afficherMain(jeu->getJoueurCourant());
+					jeu->getVue()->afficherMain(jeu->getJoueurCourant());
 					break;
 		    }
 		    
 		    case 2: {	
-				  jeu->getVue().afficherBoard(jeu->getJoueurCourant());
+				  jeu->getVue()->afficherBoard(jeu->getJoueurCourant());
 				  break;
     		}
     		case 3:
     		{
-					jeu->getVue().afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
+					jeu->getVue()->afficher2Board(jeu->getJoueurCourant(),jeu->getJoueurAutre());
     				break;
     		}
     		case 4:
     		{
-					jeu->getVue().afficherPersonnage(jeu->getJoueurCourant());
-					jeu->getVue().afficherPersonnageAutre(jeu->getJoueurAutre());
+					jeu->getVue()->afficherPersonnage(jeu->getJoueurCourant());
+					jeu->getVue()->afficherPersonnageAutre(jeu->getJoueurAutre());
     				
     		}
     		

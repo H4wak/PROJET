@@ -19,13 +19,20 @@ ComportementPouvoirPretre::ComportementPouvoirPretre(Joueur* j)
 	this->vue =new VueConsole();;
 }
 
-
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur
+*/
+ComportementPouvoirPretre::~ComportementPouvoirPretre()
+{
+  delete(vue);
+}
 /**
 * Methode qui applique le pouvoir heroique du Pretre
 */
 void ComportementPouvoirPretre::pouvoir()
 {
-  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL"<< endl;;
+  
 	this->vue->afficherChoixPouvoirPretre();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)

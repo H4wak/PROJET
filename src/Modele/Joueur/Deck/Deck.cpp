@@ -54,7 +54,7 @@ Deck::Deck(string fichier)
 			Carte * c = new Carte(pdv,pa,nom,cm,charge,provoc,sort,fct,des);
 			
 			myvector.push_back(*c);
-			
+			delete(c);
 			
 			std::random_shuffle ( myvector.begin(), myvector.end() );
 
