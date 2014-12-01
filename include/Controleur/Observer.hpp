@@ -20,7 +20,7 @@ class Observer
 	
 	public:
 		
-		void virtual actualiser()= 0;
+		bool virtual actualiser()= 0;
 		
 		
 		

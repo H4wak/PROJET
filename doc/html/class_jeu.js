@@ -18,7 +18,7 @@ var class_jeu =
     [ "getJoueurCourant", "class_jeu.html#a676f11e6bda0cde27f128e90cbaae765", null ],
     [ "getVue", "class_jeu.html#a6a98e2284176a68e9096a331d7da75e7", null ],
     [ "jouer", "class_jeu.html#a23aa7effc82b36e177013394ee74421e", null ],
-    [ "notifierObs", "class_jeu.html#ad955ffee4ed18add167fa957386a9821", null ],
+    [ "notifierObs", "class_jeu.html#acd9b7a2de81b5ca7d2a5c3b7e5e177e2", null ],
     [ "setEtat", "class_jeu.html#a0e5e13b72cd123ac0afef1fa001c9d5f", null ],
     [ "supprimerObs", "class_jeu.html#a8a051ac409a0e53397df3d4578a1e571", null ],
     [ "testNoAttaque", "class_jeu.html#a2613ca19004343323262ca2b0d55ca33", null ],

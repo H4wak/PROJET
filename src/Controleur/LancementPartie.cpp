@@ -154,4 +154,9 @@ void LancementPartie::lancerPartie()
 	this->ob = new FinDeJeu(this->jeu);
 	jeu->jouer();
 
+	delete(j1);
+	delete(j2);
+	delete(ob);
+	delete(jeu);
+
 }

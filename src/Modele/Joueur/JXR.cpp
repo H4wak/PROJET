@@ -26,5 +26,6 @@ JXR::JXR(string nom,string fichier): Joueur(nom,fichier)
 */
 JXR::~JXR()
 {
+	
 }
 

@@ -10,6 +10,8 @@ int main()
 	
 	LancementPartie* lel = new LancementPartie();
 	lel->lancerPartie();
+
+	delete(lel);
 	
   	return 0;
 }

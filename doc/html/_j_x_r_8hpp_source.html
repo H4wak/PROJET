@@ -3,43 +3,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
 <title>HearthStone:  Fichier source de include/Modele/Joueur/JXR.hpp</title>
+
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div! -->
+
+
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  
+  
   <td style="padding-left: 0.5em;">
    <div id="projectname">HearthStone
    &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Bienvenue dans la taverne</div>
   </td>
+  
+  
+  
  </tr>
  </tbody>
 </table>
 </div>
-<!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+
+<!-- Généré par Doxygen 1.7.6.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -72,11 +78,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
+</div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
     </div>
   </div>
   <div id="splitbar" style="-moz-user-select:none;" 
@@ -84,9 +89,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_j_x_r_8hpp_source.html','');});
+  initNavTree('_j_x_r_8hpp.html','');
 </script>
 <div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">include/Modele/Joueur/JXR.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_j_x_r_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00006"></a>00006 <span class="preprocessor">#ifndef JXR_HPP</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define JXR_HPP</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;string&gt;</span> <span class="comment">// pour le type std::string</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_joueur_8hpp.html">Joueur.hpp</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;../../Controleur/ComportementPouvoir/ComportementPouvoirJXR.hpp&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="comment">/******************************************************************************/</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="class_j_x_r.html">00016</a> <span class="keyword">class </span><a class="code" href="class_j_x_r.html">JXR</a>: <span class="keyword">public</span> <a class="code" href="class_joueur.html">Joueur</a>
+<a name="l00017"></a>00017 {   
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019    <span class="keyword">public</span> :
+<a name="l00020"></a>00020       <span class="comment">//Constructeur/Destructeur</span>
+<a name="l00021"></a>00021       <a class="code" href="class_j_x_r.html#aae0980eb175a7241780f7b356bfc225f">JXR</a>(std::string nom, std::string fichier);
+<a name="l00022"></a>00022       <a class="code" href="class_j_x_r.html#ab45417fe9d5e2460b6fdfd650692c2e1">~JXR</a>();
+<a name="l00023"></a>00023    
+<a name="l00024"></a>00024   
+<a name="l00025"></a>00025 };
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;../../../src/Modele/Joueur/JXR.cpp&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#endif // JXR_HPP</span>
+</pre></div></div><!-- contents -->
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,51 +138,16 @@ $(document).ready(function(){initNavTree('_j_x_r_8hpp_source.html','');});
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle">
-<div class="title">JXR.hpp</div>  </div>
-</div><!--header-->
-<div class="contents">
-<a href="_j_x_r_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef JXR_HPP</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JXR_HPP</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span> <span class="comment">// pour le type std::string</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_joueur_8hpp.html">Joueur.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../../Controleur/ComportementPouvoir/ComportementPouvoirJXR.hpp&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/******************************************************************************/</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_j_x_r.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_j_x_r.html">JXR</a>: <span class="keyword">public</span> <a class="code" href="class_joueur.html">Joueur</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{   </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <span class="keyword">private</span> :</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <span class="keyword">public</span> :</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <a class="code" href="class_j_x_r.html#aae0980eb175a7241780f7b356bfc225f">JXR</a>(std::string nom, std::string fichier);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <a class="code" href="class_j_x_r.html#ab45417fe9d5e2460b6fdfd650692c2e1">~JXR</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../../../src/Modele/Joueur/JXR.cpp&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // JXR_HPP</span></div>
-<div class="ttc" id="class_joueur_html"><div class="ttname"><a href="class_joueur.html">Joueur</a></div><div class="ttdef"><b>Definition:</b> Joueur.hpp:22</div></div>
-<div class="ttc" id="class_j_x_r_html_aae0980eb175a7241780f7b356bfc225f"><div class="ttname"><a href="class_j_x_r.html#aae0980eb175a7241780f7b356bfc225f">JXR::JXR</a></div><div class="ttdeci">JXR(std::string nom, std::string fichier)</div><div class="ttdef"><b>Definition:</b> JXR.cpp:17</div></div>
-<div class="ttc" id="_joueur_8hpp_html"><div class="ttname"><a href="_joueur_8hpp.html">Joueur.hpp</a></div></div>
-<div class="ttc" id="class_j_x_r_html_ab45417fe9d5e2460b6fdfd650692c2e1"><div class="ttname"><a href="class_j_x_r.html#ab45417fe9d5e2460b6fdfd650692c2e1">JXR::~JXR</a></div><div class="ttdeci">~JXR()</div><div class="ttdef"><b>Definition:</b> JXR.cpp:27</div></div>
-<div class="ttc" id="class_j_x_r_html"><div class="ttname"><a href="class_j_x_r.html">JXR</a></div><div class="ttdef"><b>Definition:</b> JXR.hpp:16</div></div>
-</div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
-<!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9a28adb27b1e736139febff9edba2562.html">Modele</a></li><li class="navelem"><a class="el" href="dir_8d0ad339b86dbde4d37d43c387ce9b62.html">Joueur</a></li><li class="navelem"><a class="el" href="_j_x_r_8hpp.html">JXR.hpp</a></li>
-    <li class="footer">Généré le Mercredi 26 Novembre 2014 16:16:32 pour HearthStone par
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="_j_x_r_8hpp.html">JXR.hpp</a>      </li>
+
+    <li class="footer">Généré le Lundi Décembre 1 2014 14:14:25 pour HearthStone par
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
+   </ul>
+ </div>
+
+
 </body>
 </html>

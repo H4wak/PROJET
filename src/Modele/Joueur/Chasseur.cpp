@@ -26,5 +26,6 @@ Chasseur::Chasseur(string nom,string fichier): Joueur(nom,fichier)
 */
 Chasseur::~Chasseur()
 {
+	
 }
 

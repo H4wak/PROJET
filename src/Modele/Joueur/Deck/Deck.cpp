@@ -25,7 +25,7 @@ Deck::Deck(string fichier)
   i = 0;
   j = 0;  
   string ligne,nom,des;
-  bool charge,provoc,sort;  
+  bool charge,provoc,sort; 
   vector<Carte> myvector;
   ifstream ifs(fichier.c_str());
   
@@ -46,7 +46,7 @@ Deck::Deck(string fichier)
 			iss >> sort;
 			iss >> fct;
 			iss >> des;
-			//cout << pdv << " " << pa << " " << nom << " " << cm << endl;
+			
 			
 			replace(nom.begin(),nom.end(),'_',' ');
 			replace(des.begin(),des.end(),'_',' ');
@@ -54,7 +54,7 @@ Deck::Deck(string fichier)
 			Carte * c = new Carte(pdv,pa,nom,cm,charge,provoc,sort,fct,des);
 			
 			myvector.push_back(*c);
-			//d.push(*c);
+			
 			
 			std::random_shuffle ( myvector.begin(), myvector.end() );
 
@@ -63,7 +63,7 @@ Deck::Deck(string fichier)
   			
 			i++;
 			
-			//cout << c->toString() << endl;
+			
 		}
 	}
 	else
@@ -78,7 +78,7 @@ Deck::Deck(string fichier)
   	d.push(myvector[j]);
   }
   
-  
+
   this->taille = i;
   
   usleep(2000000);
@@ -91,7 +91,7 @@ Deck::Deck(string fichier)
 */
 Deck::~Deck()
 {
-
+	
 }
 
 
@@ -117,14 +117,21 @@ void Deck::setTaille(int t)
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui renvoie la carte au sommet de la pile, puis la suprime du deck
+* Methode qui renvoie la carte au sommet de la pile, puis la suprime du deck.
 * @return c Carte
 */
 Carte Deck::tirerCarte()
 {
-	Carte c = d.top();
-	d.pop();
-	return c;
+	if (d.size() != 0){
+		Carte c = d.top();
+		d.pop();
+		return c;
+	}
+	else
+	{
+		Carte* ca = new Carte(-1,-1,".",-1,0,0,0,0,".");
+		return *ca;
+	}
 	
 }
 
@@ -137,8 +144,3 @@ stack<Carte> Deck::getStack()
 {
   return this->d;  
 }
-
-
-
-
-

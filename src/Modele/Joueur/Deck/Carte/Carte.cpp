@@ -51,7 +51,7 @@ Carte::Carte(int pdv, int pa, std::string nom, int coutmana, bool charge, bool p
 **/
 Carte::~Carte()
 {
-
+	
 }
 
 /////////////////////////////////////////////////////////////////////////

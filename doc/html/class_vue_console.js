@@ -16,6 +16,7 @@ var class_vue_console =
     [ "afficherChoixPouvoirMage", "class_vue_console.html#a525f3eacad711387238b37a9b64c5406", null ],
     [ "afficherChoixPouvoirPretre", "class_vue_console.html#ac1e6d5da6ce2c352d10c665d79c616d0", null ],
     [ "afficherDebutTour", "class_vue_console.html#a64ad6e083263f0fadef29b98207cb2aa", null ],
+    [ "afficherErreurChoix", "class_vue_console.html#a2f811063bc7f2dcac117d7a49df36931", null ],
     [ "afficherFinIntro", "class_vue_console.html#a945e04f68fb5a0089e35b1b688001b87", null ],
     [ "afficherFinTour", "class_vue_console.html#ada125e06218ee32a5dbacc526e28a84c", null ],
     [ "afficherIntro", "class_vue_console.html#a1e9faf3a19588ff0f659dfff4cfcff09", null ],

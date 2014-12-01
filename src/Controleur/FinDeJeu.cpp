@@ -21,6 +21,7 @@ FinDeJeu::FinDeJeu(Jeu* j)
    this->suj->enregistrerObs(this);
    this->pdvJ1 =30;
    this->pdvJ2 =30;
+   this->JeuTermine = false;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -34,20 +35,22 @@ FinDeJeu::~FinDeJeu()
 /////////////////////////////////////////////////////////////////////////
 /**
 * Methode qui actualise le jeu
+* @return JeuTermine boolean.
 */
-void FinDeJeu::actualiser()
+bool FinDeJeu::actualiser()
 {
   pdvJ1 = this->suj->getJoueurCourant()->getPdv();
   pdvJ2 = this->suj->getJoueurAutre()->getPdv();
-  if(pdvJ1 < 0){
-	cout <<   this->suj->getJoueurAutre()->getNom() + " a gagné!!!";
-	exit(1);
+  if(pdvJ1 <= 0){
+	cout <<   this->suj->getJoueurAutre()->getNom() + " a gagné!!!" << endl;
+	this->JeuTermine = true;
   }
  
-  if(pdvJ2 < 0){
-	cout <<   this->suj->getJoueurCourant()->getNom() + " a gagné!!!";
-	exit(1);
+  if(pdvJ2 <= 0){
+	cout <<   this->suj->getJoueurCourant()->getNom() + " a gagné!!!"<< endl;
+	this->JeuTermine = true;
   }
+  return JeuTermine;
 }
 
 

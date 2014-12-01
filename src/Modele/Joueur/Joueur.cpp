@@ -37,6 +37,11 @@ Joueur::Joueur(std::string nom, std::string fichier)
 **/
 Joueur::~Joueur()
 {
+	
+	delete(d);
+	delete(main);
+	delete(board);
+	delete(CP);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -414,7 +419,9 @@ bool Joueur::supprimerBoard(int index)
 		cout << "Index "+ sindex+" hors du Board !!" << endl;
 		return false;
 	} else {
+		Carte* ca = &(this->board->at(index-1));
 		board->erase (this->board->begin()+index-1);
+		delete(ca);
 		cout << " la carte n°"+ sindex + " a été enlevée du board"<< endl;
 		return true;
 	}

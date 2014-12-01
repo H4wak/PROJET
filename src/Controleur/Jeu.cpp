@@ -34,6 +34,11 @@ Jeu::Jeu(Joueur* j1, Joueur* j2)
 */
 Jeu::~Jeu()
 {
+		delete(etatDebutTour);
+		delete(etatNoAttaque);
+		delete(etatNoMana);
+		delete(etatDoubleNo);
+		delete(obs);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -156,7 +161,8 @@ void Jeu::jouer()
 {
 	if (system("CLS")) system("clear");
 	
-	
+	bool finJeu = false;
+
 	if (this->joueurCourant->getPdm() == 0)
 	{
 		this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
@@ -170,7 +176,17 @@ void Jeu::jouer()
 	
 	this->joueurCourant->setPDMTour(this->joueurCourant->getPdm());
 	
- 	this->joueurCourant->ajouterMain(this->joueurCourant->getDeck()->tirerCarte());
+	Carte c = this->joueurCourant->getDeck()->tirerCarte();
+
+ 	if (c.getPdv() == -1 )
+ 	{
+ 		this->joueurCourant->setPDV(this->joueurCourant->getPdv()-1);
+ 		finJeu = notifierObs();
+ 	}
+ 	else
+ 	{
+ 		this->joueurCourant->ajouterMain(c);
+ 	}
   
 	enleverMalinvoc();
 	
@@ -196,15 +212,20 @@ void Jeu::jouer()
 	}  
 	
 	
-	while (choix != 0)
+	while (choix != 0 && finJeu == false)
 	{	
 		choix = etatCourant->afficherChoixEtat();
+		finJeu = notifierObs();
 	}
-	vue.afficherFinTour();
+
+	if (finJeu != true)
+	{
+		vue.afficherFinTour();
 	
-	usleep(1000000);
+		usleep(1000000);
 	
-	this->finTour();
+		this->finTour();
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -307,7 +328,7 @@ void Jeu::attaqueCvJ(int index1)
 		}
 	}
 	cout << "attaque terminée"<< endl;
-	notifierObs();
+	
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -444,13 +465,18 @@ void Jeu::supprimerObs(Observer* O)
 /**
 * Méthode qui actualise tout les Observers de la liste d'Observers.
 */	
-void Jeu::notifierObs()
+bool Jeu::notifierObs()
 { 
-  
+  bool FinJeu = false;
   int size = obs->size();
-  for( int i = 0 ; i < size ; i++){
-	obs->at(i)->actualiser();
+  for( int i = 0 ; i < size ; i++)
+  {
+  	if(obs->at(i)->actualiser() == true)
+	{
+		FinJeu = true;
 	}
+   }
+   return FinJeu;
 }
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -480,7 +506,28 @@ void Jeu::fonctionsCarte(int f)
 			switch (choix)
 			{
 		  	  case 1: {
-						joueurAutre->setPDV(joueurAutre->getPdv()-2);
+
+		  	  			int ataq = 2;
+						int arm =  joueurAutre->getArmure();
+			
+						if (arm == 0)
+						{					
+							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+						}
+						else
+						{
+							if (ataq <= arm)
+							{
+								joueurAutre->setARMURE(arm-ataq);
+							}
+							else
+							{
+								int ataq2 = ataq - arm;
+								joueurAutre->setARMURE(0);
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+							}
+						}
+
 						break;
 		    	}
 		     default:  {
@@ -549,7 +596,28 @@ void Jeu::fonctionsCarte(int f)
 			switch (choix)
 			{
 		  	  case 1: {
-						joueurAutre->setPDV(joueurAutre->getPdv()-2);
+
+		  	  			int ataq = 2;
+						int arm =  joueurAutre->getArmure();
+			
+						if (arm == 0)
+						{					
+							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+						}
+						else
+						{
+							if (ataq <= arm)
+							{
+								joueurAutre->setARMURE(arm-ataq);
+							}
+							else
+							{
+								int ataq2 = ataq - arm;
+								joueurAutre->setARMURE(0);
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+							}
+						}
+						joueurCourant->setPDV(joueurCourant->getPdv()+2);
 						break;
 		    	}
 		     default:  {
@@ -570,6 +638,7 @@ void Jeu::fonctionsCarte(int f)
     					}   
 						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
 						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-2);
+						joueurCourant->setPDV(joueurCourant->getPdv()+2);
 						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
 						{	
 							joueurAutre->supprimerBoard(choix);
@@ -593,7 +662,27 @@ void Jeu::fonctionsCarte(int f)
 			switch (choix)
 			{
 		  	  case 1: {
-						joueurAutre->setPDV(joueurAutre->getPdv()-6);
+						int ataq = 6;
+						int arm =  joueurAutre->getArmure();
+			
+						if (arm == 0)
+						{					
+							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+						}
+						else
+						{
+							if (ataq <= arm)
+							{
+								joueurAutre->setARMURE(arm-ataq);
+							}
+							else
+							{
+								int ataq2 = ataq - arm;
+								joueurAutre->setARMURE(0);
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+							}
+						}
+						
 						break;
 		    	}
 		     default:  {

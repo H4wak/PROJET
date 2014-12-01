@@ -86,7 +86,7 @@ class Jeu : public Sujet
 		// méthodes liés aux Observers
 		void enregistrerObs(Observer* O);
 		void supprimerObs(Observer* O);
-		void notifierObs();
+		bool notifierObs();
 
 		// méthode destinée aux sortilèges
 		void fonctionsCarte(int f);

@@ -1,7 +1,9 @@
 /*
-   Fichier VueConsole.hpp
-
+* Fichier VueConsole.hpp
+* @author Pierre Gaultier & Theo Dolez
 */
+
+
 
 #ifndef VueConsole_HPP
 #define VueConsole_HPP
@@ -25,9 +27,11 @@ class VueConsole
 		VueConsole();
 		~VueConsole();
 		
+		// fonctions d'entrées
 		int getChoixJoueur();
 		string getNomJoueur();
 
+		// fonctions de sorties
 		void afficherMain(Joueur* j);
 		void afficherChoix();
 		void afficherChoixDebutTour();
@@ -48,10 +52,8 @@ class VueConsole
 		void afficherChoixPouvoirMage();
 		void afficherChoixPouvoirPretre();
 		void afficherChoixPouvoirInduction();
-		
 		void afficherChoixCarte();
 		void afficherErreurChoix();
-		
 		void afficherIntro();
 		void afficherFinIntro();
 		

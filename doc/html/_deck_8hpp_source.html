@@ -3,43 +3,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
 <title>HearthStone:  Fichier source de include/Modele/Joueur/Deck/Deck.hpp</title>
+
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div! -->
+
+
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  
+  
   <td style="padding-left: 0.5em;">
    <div id="projectname">HearthStone
    &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Bienvenue dans la taverne</div>
   </td>
+  
+  
+  
  </tr>
  </tbody>
 </table>
 </div>
-<!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+
+<!-- Généré par Doxygen 1.7.6.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -72,11 +78,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
+</div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
     </div>
   </div>
   <div id="splitbar" style="-moz-user-select:none;" 
@@ -84,9 +89,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_deck_8hpp_source.html','');});
+  initNavTree('_deck_8hpp.html','');
 </script>
 <div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">include/Modele/Joueur/Deck/Deck.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_deck_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* </span>
+<a name="l00002"></a>00002 <span class="comment">   Fichier Deck.hpp</span>
+<a name="l00003"></a>00003 <span class="comment">   Définition du type Deck</span>
+<a name="l00004"></a>00004 <span class="comment">* @author Pierre Gaultier &amp; Theo Dolez</span>
+<a name="l00005"></a>00005 <span class="comment">*/</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor">#ifndef DECK_HPP</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define DECK_HPP</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;string&gt;</span> <span class="comment">// pour les chaines de caracteres</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;iostream&gt;</span> <span class="comment">// pour les entrées/sorties</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;fstream&gt;</span> <span class="comment">// pour la gestion des flux de fichier</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;sstream&gt;</span> <span class="comment">// pour la gestion des flux de string</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;stack&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;algorithm&gt;</span>    <span class="comment">// std::random_shuffle</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;vector&gt;</span>       <span class="comment">// std::vector</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;ctime&gt;</span>        <span class="comment">// std::time</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;cstdlib&gt;</span>      <span class="comment">// std::rand, std::srand</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;unistd.h&gt;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;time.h&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="_carte_8hpp.html">Carte/Carte.hpp</a>&quot;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="comment">/******************************************************************************/</span>
+<a name="l00024"></a><a class="code" href="class_deck.html">00024</a> <span class="keyword">class </span><a class="code" href="class_deck.html">Deck</a>
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026    <span class="keyword">private</span> :
+<a name="l00027"></a>00027         <span class="keywordtype">int</span> taille;
+<a name="l00028"></a>00028         std::stack&lt;Carte&gt; d;
+<a name="l00029"></a>00029       
+<a name="l00030"></a>00030    <span class="keyword">public</span> :
+<a name="l00031"></a>00031     
+<a name="l00032"></a>00032     <span class="comment">//Constructeurs/Destructeur</span>
+<a name="l00033"></a>00033     <a class="code" href="class_deck.html#abd58d9e32c8bd9fe7a05a12a4882d94c">Deck</a>(std::string fichier);
+<a name="l00034"></a>00034     <a class="code" href="class_deck.html#a7d1331cc558c302fdf44e5ae8aae1a95">~Deck</a>();
+<a name="l00035"></a>00035     
+<a name="l00036"></a>00036     <span class="comment">//Getters/Setters</span>
+<a name="l00037"></a>00037     <span class="keywordtype">int</span> <a class="code" href="class_deck.html#a34272f22ad41d349f7b347c07fd0cbb4">getTaille</a>();
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="class_deck.html#a9374c3f2a2fbd5e75990eee1e2404067">setTaille</a>(<span class="keywordtype">int</span> t);
+<a name="l00039"></a>00039     std::stack&lt;Carte&gt; <a class="code" href="class_deck.html#ae325fade14ad5ae5912d06d0b85a85af">getStack</a>();
+<a name="l00040"></a>00040     
+<a name="l00041"></a>00041     <span class="comment">// Depile la premiere carte de la pile et la renvoie</span>
+<a name="l00042"></a>00042     <a class="code" href="class_carte.html">Carte</a> <a class="code" href="class_deck.html#a6f6eb6ba96a0b6e04d3a033a6ce409ea">tirerCarte</a>();
+<a name="l00043"></a>00043       
+<a name="l00044"></a>00044 };
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="comment">/******************************************************************************/</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &quot;../../../../src/Modele/Joueur/Deck/Deck.cpp&quot;</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#endif // DECK_HPP</span>
+</pre></div></div><!-- contents -->
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,75 +161,16 @@ $(document).ready(function(){initNavTree('_deck_8hpp_source.html','');});
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle">
-<div class="title">Deck.hpp</div>  </div>
-</div><!--header-->
-<div class="contents">
-<a href="_deck_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Fichier Deck.hpp</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">   Définition du type Deck</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef DECK_HPP</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DECK_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span> <span class="comment">// pour les chaines de caracteres</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span> <span class="comment">// pour les entrées/sorties</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span> <span class="comment">// pour la gestion des flux de fichier</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span> <span class="comment">// pour la gestion des flux de string</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span>    <span class="comment">// std::random_shuffle</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span>       <span class="comment">// std::vector</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span>        <span class="comment">// std::time</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span>      <span class="comment">// std::rand, std::srand</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_carte_8hpp.html">Carte/Carte.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/******************************************************************************/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_deck.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_deck.html">Deck</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   <span class="keyword">private</span> :</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordtype">int</span> taille;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      std::stack&lt;Carte&gt; d;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="keyword">public</span> :</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="class_deck.html#abd58d9e32c8bd9fe7a05a12a4882d94c">Deck</a>(std::string fichier);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="class_deck.html#a7d1331cc558c302fdf44e5ae8aae1a95">~Deck</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">int</span> <a class="code" href="class_deck.html#a34272f22ad41d349f7b347c07fd0cbb4">getTaille</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_deck.html#a9374c3f2a2fbd5e75990eee1e2404067">setTaille</a>(<span class="keywordtype">int</span> t);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      std::stack&lt;Carte&gt; <a class="code" href="class_deck.html#ae325fade14ad5ae5912d06d0b85a85af">getStack</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="class_carte.html">Carte</a> <a class="code" href="class_deck.html#a6f6eb6ba96a0b6e04d3a033a6ce409ea">tirerCarte</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/******************************************************************************/</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;../../../../src/Modele/Joueur/Deck/Deck.cpp&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif // DECK_HPP</span></div>
-<div class="ttc" id="class_deck_html_a6f6eb6ba96a0b6e04d3a033a6ce409ea"><div class="ttname"><a href="class_deck.html#a6f6eb6ba96a0b6e04d3a033a6ce409ea">Deck::tirerCarte</a></div><div class="ttdeci">Carte tirerCarte()</div><div class="ttdef"><b>Definition:</b> Deck.cpp:103</div></div>
-<div class="ttc" id="class_deck_html_a7d1331cc558c302fdf44e5ae8aae1a95"><div class="ttname"><a href="class_deck.html#a7d1331cc558c302fdf44e5ae8aae1a95">Deck::~Deck</a></div><div class="ttdeci">~Deck()</div><div class="ttdef"><b>Definition:</b> Deck.cpp:84</div></div>
-<div class="ttc" id="_carte_8hpp_html"><div class="ttname"><a href="_carte_8hpp.html">Carte.hpp</a></div></div>
-<div class="ttc" id="class_deck_html_a9374c3f2a2fbd5e75990eee1e2404067"><div class="ttname"><a href="class_deck.html#a9374c3f2a2fbd5e75990eee1e2404067">Deck::setTaille</a></div><div class="ttdeci">void setTaille(int t)</div><div class="ttdef"><b>Definition:</b> Deck.cpp:97</div></div>
-<div class="ttc" id="class_carte_html"><div class="ttname"><a href="class_carte.html">Carte</a></div><div class="ttdef"><b>Definition:</b> Carte.hpp:20</div></div>
-<div class="ttc" id="class_deck_html_a34272f22ad41d349f7b347c07fd0cbb4"><div class="ttname"><a href="class_deck.html#a34272f22ad41d349f7b347c07fd0cbb4">Deck::getTaille</a></div><div class="ttdeci">int getTaille()</div><div class="ttdef"><b>Definition:</b> Deck.cpp:91</div></div>
-<div class="ttc" id="class_deck_html_ae325fade14ad5ae5912d06d0b85a85af"><div class="ttname"><a href="class_deck.html#ae325fade14ad5ae5912d06d0b85a85af">Deck::getStack</a></div><div class="ttdeci">std::stack&lt; Carte &gt; getStack()</div><div class="ttdef"><b>Definition:</b> Deck.cpp:112</div></div>
-<div class="ttc" id="class_deck_html_abd58d9e32c8bd9fe7a05a12a4882d94c"><div class="ttname"><a href="class_deck.html#abd58d9e32c8bd9fe7a05a12a4882d94c">Deck::Deck</a></div><div class="ttdeci">Deck(std::string fichier)</div><div class="ttdef"><b>Definition:</b> Deck.cpp:17</div></div>
-<div class="ttc" id="class_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdef"><b>Definition:</b> Deck.hpp:24</div></div>
-</div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
-<!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9a28adb27b1e736139febff9edba2562.html">Modele</a></li><li class="navelem"><a class="el" href="dir_8d0ad339b86dbde4d37d43c387ce9b62.html">Joueur</a></li><li class="navelem"><a class="el" href="dir_f42cbb6a4a41280e131a8fdf67010b3b.html">Deck</a></li><li class="navelem"><a class="el" href="_deck_8hpp.html">Deck.hpp</a></li>
-    <li class="footer">Généré le Mercredi 26 Novembre 2014 16:16:32 pour HearthStone par
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="_deck_8hpp.html">Deck.hpp</a>      </li>
+
+    <li class="footer">Généré le Lundi Décembre 1 2014 14:14:25 pour HearthStone par
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
+   </ul>
+ </div>
+
+
 </body>
 </html>

@@ -12,19 +12,27 @@
 using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Constructeur
+*/
 VueConsole::VueConsole()
 {
 
 }
 /////////////////////////////////////////////////////////////////////////
-
+/**
+* Destructeur
+*/
 VueConsole::~VueConsole()
 {
 
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui renvoie un int entré par l'utilisateur.
+* @return i entier.
+*/
 int VueConsole::getChoixJoueur()
 {
 	
@@ -33,6 +41,10 @@ int VueConsole::getChoixJoueur()
 	return i;
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode qui renvoie une chaîne entrée par l'utilisateur.
+* @return s String.
+*/
 string VueConsole::getNomJoueur()
 {
 	
@@ -45,6 +57,9 @@ string VueConsole::getNomJoueur()
 
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche la main du Joueur.
+*/
 void VueConsole::afficherMain(Joueur* j)
 {
   cout << "\n●●--●●--●● VOTRE MAIN ●●--●●--●●" << endl;
@@ -53,6 +68,9 @@ void VueConsole::afficherMain(Joueur* j)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix du Joueur pour l'état Debut Tour.
+*/
 void VueConsole::afficherChoixDebutTour()
 {
 	cout << "Que voulez vous faire ?" << endl;
@@ -60,6 +78,9 @@ void VueConsole::afficherChoixDebutTour()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix du Joueur pour l'état No Mana.
+*/
 void VueConsole::afficherChoixNoMana()
 {
 	cout << "Que voulez vous faire ?" << endl;
@@ -67,6 +88,9 @@ void VueConsole::afficherChoixNoMana()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix du Joueur pour l'état No Attaque.
+*/
 void VueConsole::afficherChoixNoAttaque()
 {
 	cout << "Que voulez vous faire ?" << endl;
@@ -74,6 +98,9 @@ void VueConsole::afficherChoixNoAttaque()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix du Joueur pour l'état Double No.
+*/
 void VueConsole::afficherChoixDoubleNo()
 {
 	cout << "Que voulez vous faire ?" << endl;
@@ -81,6 +108,10 @@ void VueConsole::afficherChoixDoubleNo()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche le Board du Joueur entré en paramètre.
+* @param j Le joueur.
+*/
 void VueConsole::afficherBoard(Joueur* j)
 {
   cout << "\n°•. °•. °•. VOTRE BOARD .•° .•° .•°" << endl;
@@ -89,6 +120,11 @@ void VueConsole::afficherBoard(Joueur* j)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche le Board des 2 joueurs.
+* @param j1 Le premier Joueur.
+* @param j2 Le deuxième Joueur.
+*/
 void VueConsole::afficher2Board(Joueur* j1, Joueur* j2)
 {
   cout << "\n°•. °•. °•. VOTRE BOARD .•° .•° .•°" << endl;
@@ -103,7 +139,12 @@ void VueConsole::afficher2Board(Joueur* j1, Joueur* j2)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les informations du Joueur entré en paramètre au début de son tour.
+* @param j Le joueur.
+*/
 void VueConsole::afficherDebutTour(Joueur* j)
+
 {
 	cout << "C'est à " + j->getNom() + " de jouer." << endl;	
   string spdm = static_cast<ostringstream*>( &(ostringstream() << j->getPdm())  )->str();
@@ -112,18 +153,28 @@ void VueConsole::afficherDebutTour(Joueur* j)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Fin du Tour".
+*/
 void VueConsole::afficherFinTour()
 {
   cout << "\n▁ ▂ ▄ ▅ ▆ ▇ █ Fin du Tour █ ▇ ▆ ▅ ▄ ▂ ▁\n" << endl;  
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Quelle carte voulez-vous jouer ?".
+*/
 void VueConsole::afficherJouerCarte()
 {
   cout << "Quelle carte voulez-vous jouer ?" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les points de mana restant du Joueur (valeur entrée en paramètre)
+* @param i Le nombre de Pts de Mana restant.
+*/
 void VueConsole::afficherPdmnRestant(int i)
 {
   string si = static_cast<ostringstream*>( &(ostringstream() << i)  )->str();
@@ -131,17 +182,26 @@ void VueConsole::afficherPdmnRestant(int i)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Pas assez de Mana!".
+*/
 void VueConsole::afficherPasAssezDeMana()
 {
   cout << "Pas assez de Mana !" << endl;
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Entrez le numéro de votre Carte, appuyez sur Entrée, puis faites de même avec la Carte de l'adversaire";
+*/
 void VueConsole::afficherChoixCvC()
 {
 	cout << "Entrez le numéro de votre Carte, appuyez sur Entrée, puis faites de même avec la Carte de l'adversaire" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Entrez le numéro de votre Carte, appuyez sur Entrée".
+*/
 void VueConsole::afficherChoixCvJ()
 {
 	cout << "Entrez le numéro de votre Carte, appuyez sur Entrée" << endl;
@@ -149,6 +209,10 @@ void VueConsole::afficherChoixCvJ()
 
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les informations relatives à un Joueur j entré en paramètre.
+* @param j Le Joueur.
+*/
 void VueConsole::afficherPersonnage(Joueur* j)
 {
    int pdvv = j->getPdv();
@@ -164,6 +228,10 @@ void VueConsole::afficherPersonnage(Joueur* j)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les informations relatives à un Joueur j entré en paramètre. (destiné pour l'adversaire)
+* @param j Le Joueur.
+*/
 void VueConsole::afficherPersonnageAutre(Joueur* j)
 {
    int pdvv = j->getPdv();
@@ -179,18 +247,27 @@ void VueConsole::afficherPersonnageAutre(Joueur* j)
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix pour le pouvoir du Mage.
+*/
 void VueConsole::afficherChoixPouvoirMage()
 {  			
 	cout << "Entrez le numéro 1 pour attaquer le heros adverse,"<< endl << "sinon entrez un autre chiffre, puis la position sur le board de la carte a attaquer" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche les choix pour le pouvoir du Pretre.
+*/
 void VueConsole::afficherChoixPouvoirPretre()
 {  			
 	cout << "Entrez le numéro 1 pour soigner votre heros,"<< endl << "sinon entrez un autre chiffre, puis la position sur le board de la carte a soigner" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche l'intro du jeu.
+*/
 void VueConsole::afficherIntro()
 {
 	cout << "Bienvenue ! \n Vous allez commencer une partie du Jeu Hearthstone, un jeu convivial et divertissant ! \n";
@@ -200,6 +277,9 @@ void VueConsole::afficherIntro()
 } 
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche la fin de l'intro du jeu.
+*/
 void VueConsole::afficherFinIntro()
 {
 	cout << "\n Merci ! Vos Decks vont maintenant être construits, bonne partie !\n";
@@ -208,18 +288,27 @@ void VueConsole::afficherFinIntro()
 
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Veuillez indiquer le numéro de la carte cible. ".
+*/
 void VueConsole::afficherChoixCarte()
 {
 	cout << "Veuillez indiquer le numéro de la carte cible. " << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Choisissez la carte adverse qui subira L'INDUCTION NOEUTHERIENNE ! MUAHAHAHAHHA!".
+*/
 void VueConsole::afficherChoixPouvoirInduction()
 {
 	cout << "Choisissez la carte adverse qui subira L'INDUCTION NOEUTHERIENNE ! MUAHAHAHAHHA!" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Affiche "Veuillez entrer un choix valide ! :)".
+*/
 void VueConsole::afficherErreurChoix()
 {
 	cout << "Veuillez entrer un choix valide ! :)" << endl;

@@ -22,7 +22,7 @@ class Sujet
 		
 		void virtual enregistrerObs(Observer* O)= 0;
 		void virtual supprimerObs(Observer* O)= 0;
-		void virtual notifierObs()= 0;
+		bool virtual notifierObs()= 0;
 		
 		
 		

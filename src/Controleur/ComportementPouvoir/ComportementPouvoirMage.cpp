@@ -25,13 +25,33 @@ ComportementPouvoirMage::ComportementPouvoirMage(Joueur* j)
 */
 void ComportementPouvoirMage::pouvoir()
 {
-  cout << "Vous l'avez cherché!!! blblbblblbblbl LAWL"<< endl;
+  cout << "Vous l'avez cherché!!!"<< endl;
 	this->vue->afficherChoixPouvoirMage();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)
 		{
 		    case 1: {
-					this->joueur->getJoueurAutre()->setPDV(this->joueur->getJoueurAutre()->getPdv()-1);
+
+		    		int arm =  joueur->getJoueurAutre()->getArmure();
+			
+					if (arm == 0)
+					{					
+						joueur->getJoueurAutre()->setPDV(joueur->getJoueurAutre()->getPdv()- 1);
+					}
+					else
+					{
+						if (1 <= arm)
+						{
+							joueur->getJoueurAutre()->setARMURE(arm-1);
+						}
+						else
+						{
+							int ataq2 = 1 - arm;
+							joueur->getJoueurAutre()->setARMURE(0);
+							joueur->getJoueurAutre()->setPDV(joueur->getJoueurAutre()->getPdv()- ataq2);
+						}
+					}
+
 					break;
 		    }
 		    default:  {

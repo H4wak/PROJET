@@ -21,6 +21,7 @@ class FinDeJeu : public Observer
 		Jeu* suj;
 		int pdvJ1;
 		int pdvJ2;
+		bool JeuTermine;
 		
 		
 	
@@ -28,7 +29,7 @@ class FinDeJeu : public Observer
 		
 		FinDeJeu(Jeu* j);
 		~FinDeJeu();
-		void actualiser();
+		bool actualiser();
 		
 		
 		
