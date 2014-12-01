@@ -108,136 +108,7 @@ void Joueur::setPouvoirUtilise(bool p)
   this->pouvoirUtilise = p;
 }
 
-
 /////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
-string Joueur::afficherMain()
-{
-	string result;
-	int i =0;
-	int size;
-	
-	size = this->main->size();
-	
-	if (size == 0) 
-	{
-		return "Main vide!";
-	} else {
-	
-		while ( i < size)
-		{
-			string index = static_cast<ostringstream*>( &(ostringstream() << i+1) )->str();
-			string lel = this->main->at(i).toString();
-			result +=  index +". " + lel + "\n";
-			
-			i++;
-		}
-	}
-	
-	
-	return result;
-	
-	
-}
-
-
-/////////////////////////////////////////////////////////////////////////
-string Joueur::afficherBoard()
-{
-	string result;
-	int i =0;
-	int size;
-	
-	size = this->board->size();
-	
-	if (size == 0) 
-	{
-		return "Board vide!";
-	} else {
-	
-		while ( i < size)
-		{
-			string index = static_cast<ostringstream*>( &(ostringstream() << i+1) )->str();
-			string lel = this->board->at(i).toString();
-			result +=  index +". " + lel + "\n";						
-			i++;
-		}
-	}	
-	
-	return result;
-	
-	
-}
-
-/////////////////////////////////////////////////////////////////////////
-bool Joueur::ajouterMain(Carte c)
-{
-	
-	int size = this->main->size();
-	if (size >= tailleMain)
-	{
-		cout << "Main pleine !" << endl;
-		return false;
-	} else {
-		 main->push_back (c);
-		 return true;
-	}
-		
-	
-}
-
-//////////////////////////////////////////////////////////////////////////
-bool Joueur::ajouterBoard(Carte c)
-{
-	int size = this->board->size();
-	if (size >= tailleBoard)
-	{
-		cout << "Board plein !" << endl;
-		return false;
-	} else {
-		 board->push_back (c);
-		 return true;
-	}
-		
-	
-}
-
-//////////////////////////////////////////////////////////////////////////
-bool Joueur::supprimerMain(int index)
-{
-	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
-	int size = this->main->size();
-	if (index-1 >= tailleMain || index-1 < 0 || index > size )
-	{	
-		cout << "Index "+ sindex +" hors de la Main !!" << endl;
-		return false;
-	} else {
-		main->erase (this->main->begin()+index-1);
-		cout << " la carte n°"+ sindex + " a été enlevée de la main"<< endl;
-		return true;
-	}
-}
-		
-//////////////////////////////////////////////////////////////////////////
-bool Joueur::supprimerBoard(int index)
-{
-	string sindex = static_cast<ostringstream*>( &(ostringstream() << index) )->str();
-	int size = this->main->size();
-	if (index-1 >= tailleBoard || index-1 < 0 || index > size) 
-	{	
-		cout << "Index "+ sindex+" hors du Board !!" << endl;
-		return false;
-	} else {
-		board->erase (this->board->begin()+index-1);
-		cout << " la carte n°"+ sindex + " a été enlevée du board"<< endl;
-		return true;
-	}
-}
-
-
-/////////////////////////////////////////////////////////////////////////
->>>>>>> 1711f6e071adce1f7e2189064a92d0a45b329727
 /**
 * Methode qui renvoie le nombre de points de vie du personnage
 * @return pdv les points de vie du personnage
@@ -473,8 +344,8 @@ string Joueur::afficherBoard()
 bool Joueur::ajouterMain(Carte c)
 {
 	
-	
-	if (this->main->size() >= tailleMain)
+	int size = this->main->size();
+	if (size >= tailleMain)
 	{
 		cout << "Main pleine !" << endl;
 		return false;
@@ -494,8 +365,8 @@ bool Joueur::ajouterMain(Carte c)
 */
 bool Joueur::ajouterBoard(Carte c)
 {
-	
-	if (this->board->size() >= tailleBoard)
+	int size = this->board->size();
+	if (size >= tailleBoard)
 	{
 		cout << "Board plein !" << endl;
 		return false;
