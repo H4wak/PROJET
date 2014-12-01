@@ -18,6 +18,15 @@ ComportementPouvoirGuerrier::ComportementPouvoirGuerrier(Joueur* j)
   this->joueur = j;
 }
 
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur.
+**/
+ComportementPouvoirGuerrier::~ComportementPouvoirGuerrier()
+{
+  
+}
+
 
 /**
 * Methode qui applique le pouvoir heroique du guerrier

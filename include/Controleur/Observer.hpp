@@ -19,7 +19,7 @@ class Observer
 		
 	
 	public:
-		
+		virtual ~Observer(){};
 		bool virtual actualiser()= 0;
 		
 		

@@ -19,7 +19,7 @@ class Sujet
 		
 	
 	public:
-		
+		virtual ~Sujet(){};
 		void virtual enregistrerObs(Observer* O)= 0;
 		void virtual supprimerObs(Observer* O)= 0;
 		bool virtual notifierObs()= 0;

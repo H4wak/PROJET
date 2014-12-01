@@ -15,6 +15,7 @@
 class ComportementPouvoir
 {
    public :
+    virtual ~ComportementPouvoir(){};
 	virtual void pouvoir() = 0;
    
 };

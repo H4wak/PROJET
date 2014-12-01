@@ -216,6 +216,8 @@ void Jeu::jouer()
 	
 	while (choix != 0 && finJeu == false)
 	{	
+		vue->afficherPersonnage(joueurCourant);
+		vue->afficherPersonnageAutre(joueurAutre);
 		choix = etatCourant->afficherChoixEtat();
 		finJeu = notifierObs();
 	}
@@ -503,62 +505,91 @@ void Jeu::fonctionsCarte(int f)
 		////// Tir des Arcanes
 		case 20:
 		{
-			vue->afficherChoixPouvoirMage();
-			int choix = vue->getChoixJoueur();
-			switch (choix)
-			{
-		  	  case 1: {
-
-		  	  			int ataq = 2;
-						int arm =  joueurAutre->getArmure();
 			
-						if (arm == 0)
-						{					
-							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
-						}
-						else
-						{
-							if (ataq <= arm)
-							{
-								joueurAutre->setARMURE(arm-ataq);
+			if (joueurAutre->getBoard()->size() != 0 )
+			{
+			
+				vue->afficherChoixPouvoirMage();
+				int choix = vue->getChoixJoueur();
+				switch (choix)
+				{
+			  	  case 1: {
+	
+			  	  			int ataq = 2;
+							int arm =  joueurAutre->getArmure();
+				
+							if (arm == 0)
+							{					
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
 							}
 							else
 							{
-								int ataq2 = ataq - arm;
-								joueurAutre->setARMURE(0);
-								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								if (ataq <= arm)
+								{
+									joueurAutre->setARMURE(arm-ataq);
+								}
+								else
+								{
+									int ataq2 = ataq - arm;
+									joueurAutre->setARMURE(0);
+									joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								}
 							}
-						}
-
-						break;
-		    	}
-		     default:  {
 	
-	    				choix = vue->getChoixJoueur();
-	    				bool bonnecarte = false;	
-    					int size = joueurAutre->getBoard()->size();  
-    					while ( bonnecarte == false )
-    					{
-    						if ( choix > 0 && choix <= size)
-    						{
-    							bonnecarte = true;
-    						}
-    						else
-    						{	
-								choix = vue->getChoixJoueur();
-      						}   				
-    					}   
-						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
-						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-2);
-						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
-						{	
-							joueurAutre->supprimerBoard(choix);
-							cout << "Vous avez triomphé de votre adversaire !" << endl;
-						}
-					break;
-		    }
-		}				
-			break;
+							break;
+			    	}
+			     default:  {
+		
+		    				choix = vue->getChoixJoueur();
+		    				bool bonnecarte = false;	
+	    					int size = joueurAutre->getBoard()->size();  
+	    					while ( bonnecarte == false )
+	    					{
+	    						if ( choix > 0 && choix <= size)
+	    						{
+	    							bonnecarte = true;
+	    						}
+	    						else
+	    						{	
+									choix = vue->getChoixJoueur();
+	      						}   				
+	    					}   
+							int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+							joueurAutre->getBoard()->at(choix-1).setPdv(pdv-2);
+							if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+							{	
+								joueurAutre->supprimerBoard(choix);
+								cout << "Vous avez triomphé de votre adversaire !" << endl;
+							}
+						break;
+			    	}
+				}			
+			}
+			else
+			{	
+				int ataq = 2;
+				int arm =  joueurAutre->getArmure();
+				if (arm == 0)
+				{					
+					joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+				}
+				else
+				{
+					if (ataq <= arm)
+					{
+						joueurAutre->setARMURE(arm-ataq);
+					}
+					else
+					{
+						int ataq2 = ataq - arm;
+						joueurAutre->setARMURE(0);
+						joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+					}
+				}
+			
+			
+			}
+				break;
 		}
 		
 		///////// Voile de Mort
@@ -593,36 +624,41 @@ void Jeu::fonctionsCarte(int f)
 		///////// Drain de Vie
 		case 22: {
 		
-			vue->afficherChoixPouvoirMage();
-			int choix = vue->getChoixJoueur();
-			switch (choix)
-			{
-		  	  case 1: {
-
-		  	  			int ataq = 2;
-						int arm =  joueurAutre->getArmure();
 			
-						if (arm == 0)
-						{					
-							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
-						}
-						else
-						{
-							if (ataq <= arm)
-							{
-								joueurAutre->setARMURE(arm-ataq);
+			
+			if (joueurAutre->getBoard()->size() != 0 )
+			{
+				vue->afficherChoixPouvoirMage();
+				int choix = vue->getChoixJoueur();
+				switch (choix)
+				{
+			  	  case 1: {
+	
+			  	  			int ataq = 2;	
+							int arm =  joueurAutre->getArmure();
+				
+							if (arm == 0)
+							{					
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
 							}
 							else
 							{
-								int ataq2 = ataq - arm;
-								joueurAutre->setARMURE(0);
-								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								if (ataq <= arm)
+								{
+									joueurAutre->setARMURE(arm-ataq);
+								}
+								else
+								{
+									int ataq2 = ataq - arm;
+									joueurAutre->setARMURE(0);
+									joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								}
 							}
-						}
-						joueurCourant->setPDV(joueurCourant->getPdv()+2);
-						break;
-		    	}
-		     default:  {
+			
+							
+							break;
+		    		}
+			     default:  {
 	
 	    				choix = vue->getChoixJoueur();
 	    				bool bonnecarte = false;	
@@ -650,6 +686,30 @@ void Jeu::fonctionsCarte(int f)
 		    	}
 			}		
 			
+			}
+			else
+			{
+				int ataq = 2;	
+				int arm =  joueurAutre->getArmure();
+				
+				if (arm == 0)
+				{					
+					joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+				}
+				else
+				{
+					if (ataq <= arm)
+					{
+						joueurAutre->setARMURE(arm-ataq);
+					}
+					else
+					{
+						int ataq2 = ataq - arm;
+						joueurAutre->setARMURE(0);
+						joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+					}
+				}
+			}
 			joueurCourant->setPDV(joueurCourant->getPdv()+2);		
 			break;
 			
@@ -659,60 +719,88 @@ void Jeu::fonctionsCarte(int f)
 		////// Boule de Feu
 		case 23:
 		{
-			vue->afficherChoixPouvoirMage();
-			int choix = vue->getChoixJoueur();
-			switch (choix)
+			if (joueurAutre->getBoard()->size() != 0 )
 			{
-		  	  case 1: {
-						int ataq = 6;
-						int arm =  joueurAutre->getArmure();
-			
-						if (arm == 0)
-						{					
-							joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
-						}
-						else
-						{
-							if (ataq <= arm)
-							{
-								joueurAutre->setARMURE(arm-ataq);
+				vue->afficherChoixPouvoirMage();
+				int choix = vue->getChoixJoueur();
+				switch (choix)
+				{
+			  	  case 1: {
+							int ataq = 6;
+							int arm =  joueurAutre->getArmure();
+				
+							if (arm == 0)
+							{					
+								joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
 							}
 							else
 							{
-								int ataq2 = ataq - arm;
-								joueurAutre->setARMURE(0);
-								joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								if (ataq <= arm)
+								{
+									joueurAutre->setARMURE(arm-ataq);
+								}
+								else
+								{
+									int ataq2 = ataq - arm;
+									joueurAutre->setARMURE(0);
+									joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+								}
 							}
-						}
-						
-						break;
-		    	}
-		     default:  {
-	
-	    				choix = vue->getChoixJoueur();
-	    				bool bonnecarte = false;	
-    					int size = joueurAutre->getBoard()->size();  
-    					while ( bonnecarte == false )
-    					{
-    						if ( choix > 0 && choix <= size)
+							
+							break;
+			    	}
+			     default:  {
+		
+		    				choix = vue->getChoixJoueur();
+		    				bool bonnecarte = false;	
+    						int size = joueurAutre->getBoard()->size();  
+    						while ( bonnecarte == false )
     						{
-    							bonnecarte = true;
-    						}
-    						else
-    						{	
-								choix = vue->getChoixJoueur();
-      						}   				
-    					}   
-						int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
-						joueurAutre->getBoard()->at(choix-1).setPdv(pdv-6);
-						if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
-						{	
-							joueurAutre->supprimerBoard(choix);
-							cout << "Vous avez triomphé de votre adversaire !" << endl;
-						}
-					break;
-		    }
-		}				
+    							if ( choix > 0 && choix <= size)
+    							{
+    								bonnecarte = true;
+    							}
+    							else
+    							{	
+									choix = vue->getChoixJoueur();
+    	  						}   				
+    						}   
+							int pdv = joueurAutre->getBoard()->at(choix-1).getPdv();
+							joueurAutre->getBoard()->at(choix-1).setPdv(pdv-6);
+							if ( joueurAutre->getBoard()->at(choix-1).getPdv() <= 0 )
+							{	
+								joueurAutre->supprimerBoard(choix);
+								cout << "Vous avez triomphé de votre adversaire !" << endl;
+							}
+						break;
+			    }
+			}
+			
+			}
+			else
+			{
+				int ataq = 6;
+				int arm =  joueurAutre->getArmure();
+				
+				if (arm == 0)
+				{					
+					joueurAutre->setPDV(joueurAutre->getPdv()- ataq);
+				}
+				else
+				{
+					if (ataq <= arm)
+					{
+						joueurAutre->setARMURE(arm-ataq);
+					}
+					else
+					{
+						int ataq2 = ataq - arm;
+						joueurAutre->setARMURE(0);
+						joueurAutre->setPDV(joueurAutre->getPdv()- ataq2);
+					}
+				}
+			
+			}				
 			break;
 		}
 		
@@ -878,27 +966,34 @@ void Jeu::fonctionsCarte(int f)
     	////// Esprit Divin
 		case 61: {
 		
-			vue->afficherChoixCarte();
-			int pdv1,pdv2;
-			int choix = vue->getChoixJoueur();
-			bool bonnecarte = false;
-			int size = joueurCourant->getBoard()->size(); 
-			while ( bonnecarte == false )
-    		{
-    			if ( choix > 0 && choix <= size)
-    			{
-    				bonnecarte = true;
-    			}
-    			else
-    			{	
-					choix = vue->getChoixJoueur();
-      			}   				
-    		}
+		if (joueurAutre->getBoard()->size() != 0 )
+		{
+			
+				vue->afficherChoixCarte();
+				int pdv1,pdv2;
+				int choix = vue->getChoixJoueur();
+				bool bonnecarte = false;
+				int size = joueurCourant->getBoard()->size(); 
+				while ( bonnecarte == false )
+	    		{
+	    			if ( choix > 0 && choix <= size)
+	    			{
+	    				bonnecarte = true;
+	    			}
+	    			else
+	    			{	
+						choix = vue->getChoixJoueur();
+	      			}   				
+	    		}
     		
-    		pdv1 = joueurCourant->getBoard()->at(choix-1).getPdv();
-    		pdv2 = pdv1*2;
-    		joueurCourant->getBoard()->at(choix-1).setPdv(pdv2);
-    	
+	    		pdv1 = joueurCourant->getBoard()->at(choix-1).getPdv();
+	    		pdv2 = pdv1*2;
+	    		joueurCourant->getBoard()->at(choix-1).setPdv(pdv2);
+ 		}   
+ 		else
+ 		{
+ 			vue->afficherPasDeCarteBoard();
+ 		}	
     		break;
     	}
     		
@@ -906,24 +1001,30 @@ void Jeu::fonctionsCarte(int f)
 		////// Marque du chasseur
 		case 80:
 		{
-			vue->afficherChoixCarte();
-			int choix = vue->getChoixJoueur();
-	    	bool bonnecarte = false;	
-    		int size = joueurAutre->getBoard()->size();  
-    		while ( bonnecarte == false )
-    		{
-    			if ( choix > 0 && choix <= size)
+			if (joueurAutre->getBoard()->size() != 0 )
+			{
+				vue->afficherChoixCarte();
+				int choix = vue->getChoixJoueur();
+	    		bool bonnecarte = false;	
+    			int size = joueurAutre->getBoard()->size();  
+    			while ( bonnecarte == false )
     			{
-    				bonnecarte = true;
+    				if ( choix > 0 && choix <= size)
+    				{
+    					bonnecarte = true;
+    				}
+    				else
+    				{	
+						choix = vue->getChoixJoueur();
+      				}   				
     			}
-    			else
-    			{	
-					choix = vue->getChoixJoueur();
-      			}   				
-    		}
-    		   
-			joueurAutre->getBoard()->at(choix-1).setPdv(1);
-			
+    			   
+				joueurAutre->getBoard()->at(choix-1).setPdv(1);
+			}
+			else
+			{
+				vue->afficherPasDeCarteAdverse();
+			}	
 		
 			break;
 		}

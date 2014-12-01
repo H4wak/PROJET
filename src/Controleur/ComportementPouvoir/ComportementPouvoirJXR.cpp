@@ -33,26 +33,30 @@ ComportementPouvoirJXR::~ComportementPouvoirJXR()
 */
 void ComportementPouvoirJXR::pouvoir()
 {
-
-	this->vue->afficherChoixPouvoirInduction();
-    int choix = this->vue->getChoixJoueur();
-    bool bonnecarte = false;
-   	int size = this->joueur->getJoueurAutre()->getBoard()->size();  
-   while ( bonnecarte == false )
-   {
-  	 if ( choix > 0 && choix <= size)
-     {
-   		bonnecarte = true;
- 	 }
-	 else
-     {	
-		choix = this->vue->getChoixJoueur();
-     }   				
-   }   
-	
-	this->joueur->getJoueurAutre()->supprimerBoard(choix);
-
+	if(this->joueur->getJoueurAutre()->getBoard()->size() !=0)
+	{
+		this->vue->afficherChoixPouvoirInduction();
+	    int choix = this->vue->getChoixJoueur();
+	    bool bonnecarte = false;
+	   	int size = this->joueur->getJoueurAutre()->getBoard()->size();  
+	   while ( bonnecarte == false )
+	   {
+	  	 if ( choix > 0 && choix <= size)
+	     {
+	   		bonnecarte = true;
+	 	 }
+		 else
+	     {	
+			choix = this->vue->getChoixJoueur();
+	     }   				
+	   }   
 		
+		this->joueur->getJoueurAutre()->supprimerBoard(choix);
+	}
+	else
+	{
+		this->vue->afficherPasDeCarteAdverse();
+	}
 }
 
 

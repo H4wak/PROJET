@@ -18,6 +18,15 @@ ComportementPouvoirDemoniste::ComportementPouvoirDemoniste(Joueur* j)
   this->joueur = j;
 }
 
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur.
+**/
+ComportementPouvoirDemoniste::~ComportementPouvoirDemoniste()
+{
+  
+}
+
 
 /**
 * Methode qui applique le pouvoir heroique du Demoniste

@@ -88,6 +88,8 @@ int EtatNoMana::afficherChoixEtat()
     		}
     		case 5:
     		{
+    			if (jeu->getJoueurAutre()->getBoard()->size() !=0)
+    			{
     				jeu->getVue()->afficherChoixCvC();
     				bool bonnecarte1 = false;
     				bool bonnecarte2 = false;
@@ -116,7 +118,13 @@ int EtatNoMana::afficherChoixEtat()
     				if (jeu->testNoAttaque() == true )
     				{
     					jeu->setEtat(jeu->getEtatDoubleNo());
-		   		 	}		   		 
+		   		 	}
+		   		 }
+		   		 else
+		   		 {
+		   		 	jeu->getVue()->afficherPasDeCarteAdverse();
+		   		 }		  
+		   		 	break; 		 
     					
     		}
     		case 6:

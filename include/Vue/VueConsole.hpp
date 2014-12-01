@@ -54,6 +54,8 @@ class VueConsole
 		void afficherChoixPouvoirInduction();
 		void afficherChoixCarte();
 		void afficherErreurChoix();
+		void afficherPasDeCarteAdverse();
+		void afficherPasDeCarteBoard();
 		void afficherIntro();
 		void afficherFinIntro();
 		

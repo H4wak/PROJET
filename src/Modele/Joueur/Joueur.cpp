@@ -41,7 +41,7 @@ Joueur::~Joueur()
 	delete(d);
 	delete(main);
 	delete(board);
-	delete(CP);
+	//delete(CP);
 }
 
 /////////////////////////////////////////////////////////////////////////

@@ -33,7 +33,8 @@ ComportementPouvoirMage::~ComportementPouvoirMage()
 */
 void ComportementPouvoirMage::pouvoir()
 {
-  
+  if(this->joueur->getJoueurAutre()->getBoard()->size() !=0)
+  {
 	this->vue->afficherChoixPouvoirMage();
 	int choix = this->vue->getChoixJoueur();
 		switch (choix)
@@ -89,6 +90,28 @@ void ComportementPouvoirMage::pouvoir()
 		    }
 
 		}
+  }
+  else
+  {
+  	int arm =  joueur->getJoueurAutre()->getArmure();
+	if (arm == 0)
+	{					
+		joueur->getJoueurAutre()->setPDV(joueur->getJoueurAutre()->getPdv()- 1);
+	}
+	else
+	{
+		if (1 <= arm)
+		{
+			joueur->getJoueurAutre()->setARMURE(arm-1);
+		}
+		else
+		{
+			int ataq2 = 1 - arm;
+			joueur->getJoueurAutre()->setARMURE(0);
+			joueur->getJoueurAutre()->setPDV(joueur->getJoueurAutre()->getPdv()- ataq2);
+		}
+	}
+  }
 }
 
 

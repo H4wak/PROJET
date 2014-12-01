@@ -149,6 +149,8 @@ int EtatDebutTour::afficherChoixEtat()
     		}
     		case 6:
     		{		
+    			if (jeu->getJoueurAutre()->getBoard()->size() !=0)
+    			{
     				jeu->getVue()->afficherChoixCvC();
     				bool bonnecarte1 = false;
     				bool bonnecarte2 = false;
@@ -177,7 +179,12 @@ int EtatDebutTour::afficherChoixEtat()
     				if (jeu->testNoAttaque() == true )
     				{
     					jeu->setEtat(jeu->getEtatNoAttaque());
-		   		 	}		   		 
+		   		 	}
+		   		}
+		   		else
+		   		{
+		   			jeu->getVue()->afficherPasDeCarteAdverse();
+		   		}		   		 
     				break;	
     		}
     		case 7:

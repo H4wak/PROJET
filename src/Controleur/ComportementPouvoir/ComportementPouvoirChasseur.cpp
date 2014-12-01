@@ -18,6 +18,15 @@ ComportementPouvoirChasseur::ComportementPouvoirChasseur(Joueur* j)
   this->joueur = j;
 }
 
+/////////////////////////////////////////////////////////////////////////
+/**
+* Destructeur.
+**/
+ComportementPouvoirChasseur::~ComportementPouvoirChasseur()
+{
+  
+}
+
 
 /**
 * Methode qui applique le pouvoir heroique du Chasseur

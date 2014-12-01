@@ -19,7 +19,7 @@ class Etat
 		
 	
 	public:
-		
+		virtual ~Etat(){};
 		void virtual finTour()= 0;
 		int virtual afficherChoixEtat()= 0;
 		
