@@ -23,6 +23,8 @@ var class_vue_console =
     [ "afficherJouerCarte", "class_vue_console.html#a0f4cab13a73ac5c80881276687a506aa", null ],
     [ "afficherMain", "class_vue_console.html#a0782f21077f7c1be22e798ec445a4d87", null ],
     [ "afficherPasAssezDeMana", "class_vue_console.html#a2b469256d2776aa6e01ebc4bd393c2a3", null ],
+    [ "afficherPasDeCarteAdverse", "class_vue_console.html#a9e339ac2f7b3f337d4a2951db490815b", null ],
+    [ "afficherPasDeCarteBoard", "class_vue_console.html#a4a9f289f010e643b5e8a004f3fe539ac", null ],
     [ "afficherPdmnRestant", "class_vue_console.html#a9f1b65a45e8e3da31ae35fa6c4d53dce", null ],
     [ "afficherPersonnage", "class_vue_console.html#ad450cc024c4c7797c18f399b0f4c321c", null ],
     [ "afficherPersonnageAutre", "class_vue_console.html#ae015f7453d65bb89abef4793addc18ca", null ],

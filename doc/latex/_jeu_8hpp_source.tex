@@ -1,4 +1,5 @@
-\hypertarget{_jeu_8hpp_source}{\section{include/\-Controleur/\-Jeu.hpp}
+\hypertarget{_jeu_8hpp}{\section{Jeu.\-hpp}
+\label{_jeu_8hpp}\index{include/\-Controleur/\-Jeu.\-hpp@{include/\-Controleur/\-Jeu.\-hpp}}
 }
 
 \begin{DoxyCode}
@@ -13,15 +14,19 @@
 00013 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <vector>}
 00014 \textcolor{preprocessor}{#include <string>} \textcolor{comment}{// pour le type std::string}
 00015 \textcolor{preprocessor}{#include "../Modele/Joueur/Joueur.hpp"}
-00016 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_guerrier_8hpp}{ComportementPouvoir/ComportementPouvoirGuerrier.hpp}"}
+00016 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_guerrier_8hpp}{ComportementPouvoir/ComportementPouvoirGuerrier.hpp}
+      "}
 00017 \textcolor{preprocessor}{#include "../Modele/Joueur/Guerrier.hpp"}
-00018 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_chasseur_8hpp}{ComportementPouvoir/ComportementPouvoirChasseur.hpp}"}
+00018 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_chasseur_8hpp}{ComportementPouvoir/ComportementPouvoirChasseur.hpp}
+      "}
 00019 \textcolor{preprocessor}{#include "../Modele/Joueur/Chasseur.hpp"}
 00020 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_mage_8hpp}{ComportementPouvoir/ComportementPouvoirMage.hpp}"}
 00021 \textcolor{preprocessor}{#include "../Modele/Joueur/Mage.hpp"}
-00022 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_demoniste_8hpp}{ComportementPouvoir/ComportementPouvoirDemoniste.hpp}"}
+00022 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_demoniste_8hpp}{ComportementPouvoir/ComportementPouvoirDemoniste.hpp}
+      "}
 00023 \textcolor{preprocessor}{#include "../Modele/Joueur/Demoniste.hpp"}
-00024 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_pretre_8hpp}{ComportementPouvoir/ComportementPouvoirPretre.hpp}"}
+00024 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_pretre_8hpp}{ComportementPouvoir/ComportementPouvoirPretre.hpp}
+      "}
 00025 \textcolor{preprocessor}{#include "../Modele/Joueur/Pretre.hpp"}
 00026 \textcolor{preprocessor}{#include "\hyperlink{_comportement_pouvoir_j_x_r_8hpp}{ComportementPouvoir/ComportementPouvoirJXR.hpp}"}
 00027 \textcolor{preprocessor}{#include "../Modele/Joueur/JXR.hpp"}
@@ -35,8 +40,7 @@
 00035 \textcolor{keyword}{class }\hyperlink{class_etat_no_mana}{EtatNoMana};
 00036 \textcolor{keyword}{class }\hyperlink{class_etat_no_attaque}{EtatNoAttaque};
 00037 \textcolor{keyword}{class }\hyperlink{class_etat_double_no}{EtatDoubleNo};
-00038 \textcolor{comment}{/*****************************************************************************
-      */}
+00038 \textcolor{comment}{/******************************************************************************/}
 00039 
 \hypertarget{_jeu_8hpp_source_l00040}{}\hyperlink{class_jeu}{00040} \textcolor{keyword}{class }\hyperlink{class_jeu}{Jeu} : \textcolor{keyword}{public} \hyperlink{class_sujet}{Sujet}
 00041 \{
@@ -50,7 +54,7 @@
 00049         \hyperlink{class_etat_no_mana}{EtatNoMana}* etatNoMana;
 00050         \hyperlink{class_etat_no_attaque}{EtatNoAttaque}* etatNoAttaque;
 00051         \hyperlink{class_etat_double_no}{EtatDoubleNo}* etatDoubleNo;
-00052         \hyperlink{class_vue_console}{VueConsole} vue;
+00052         \hyperlink{class_vue_console}{VueConsole}* vue;
 00053         vector<Observer*>* obs;     
 00054 
 00055  
@@ -68,7 +72,7 @@
 00067         \hyperlink{class_etat}{Etat}* \hyperlink{class_jeu_a94fc4b05a1d532795b4c8a5d0fec4003}{getEtatDoubleNo}();
 00068         \hyperlink{class_etat}{Etat}* \hyperlink{class_jeu_a8ae205a6a9d95ec5bed20e2fdf5c74a7}{getEtatDebutTour}();
 00069         \textcolor{keywordtype}{void} \hyperlink{class_jeu_a0e5e13b72cd123ac0afef1fa001c9d5f}{setEtat}(\hyperlink{class_etat}{Etat}* e); 
-00070         \hyperlink{class_vue_console}{VueConsole} \hyperlink{class_jeu_a6a98e2284176a68e9096a331d7da75e7}{getVue}();
+00070         \hyperlink{class_vue_console}{VueConsole}* \hyperlink{class_jeu_a2f39c9ab947721e35f78a0e187722ce6}{getVue}();
 00071 
 00072         
 00073         \textcolor{comment}{// méthodes d'attaque/test/changement d'état }

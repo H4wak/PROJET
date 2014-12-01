@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setarmure',['setARMURE',['../class_joueur.html#a2ff017f6e65cad383d00d153ece08045',1,'Joueur::setARMURE(int arm)'],['../class_joueur.html#a478be77fdcec7845f75fcb390b764027',1,'Joueur::setArmure(int narmure)']]],
+  ['setarmure',['setARMURE',['../class_joueur.html#a2ff017f6e65cad383d00d153ece08045',1,'Joueur']]],
   ['setcharge',['setCharge',['../class_carte.html#aa432c0b924d602dd602dbec76a2a05fd',1,'Carte']]],
   ['setcoutmana',['setCoutmana',['../class_carte.html#a7965f40ee312b74c9e65601156c8a1b9',1,'Carte']]],
   ['setcp',['setCP',['../class_joueur.html#a7b408ea957e1b125a509ec8e88b2c148',1,'Joueur']]],
@@ -13,7 +13,7 @@ var searchData=
   ['setpa',['setPa',['../class_carte.html#ab84e1045db524abd89c715ce8c9e57eb',1,'Carte']]],
   ['setpdm',['setPDM',['../class_joueur.html#a199d04e5240f4078ba2f3da2431f0bb2',1,'Joueur']]],
   ['setpdmtour',['setPDMTour',['../class_joueur.html#a3984848768db7e175aeeb51ca89e4eb3',1,'Joueur']]],
-  ['setpdv',['setPdv',['../class_carte.html#a002eabf379874c8a989d0ee4469074d0',1,'Carte::setPdv()'],['../class_joueur.html#a8f850d90156ccfb2f7599cc6658dc384',1,'Joueur::setPdv(int npdv)'],['../class_joueur.html#ac4b9408bed0a64ac63188f7f8e1a73d9',1,'Joueur::setPDV(int npdv)']]],
+  ['setpdv',['setPDV',['../class_joueur.html#ac4b9408bed0a64ac63188f7f8e1a73d9',1,'Joueur::setPDV()'],['../class_carte.html#a002eabf379874c8a989d0ee4469074d0',1,'Carte::setPdv()']]],
   ['setpdvmax',['setPdvmax',['../class_carte.html#aa997fa354a645b125491589dbc4631d1',1,'Carte']]],
   ['setpouvoirutilise',['setPouvoirUtilise',['../class_joueur.html#a57f6f8d3ff6ba9b5026a51b23e03cd0a',1,'Joueur']]],
   ['setprovoc',['setProvoc',['../class_carte.html#a5e107806db0095a43d360eb5aba4f268',1,'Carte']]],

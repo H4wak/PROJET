@@ -16,7 +16,7 @@ var class_jeu =
     [ "getEtatNoMana", "class_jeu.html#a6af6b2d0bd215cde1d63dbe3e799b291", null ],
     [ "getJoueurAutre", "class_jeu.html#aeaa0f199d6a1c9271a49b226159dd1ca", null ],
     [ "getJoueurCourant", "class_jeu.html#a676f11e6bda0cde27f128e90cbaae765", null ],
-    [ "getVue", "class_jeu.html#a6a98e2284176a68e9096a331d7da75e7", null ],
+    [ "getVue", "class_jeu.html#a2f39c9ab947721e35f78a0e187722ce6", null ],
     [ "jouer", "class_jeu.html#a23aa7effc82b36e177013394ee74421e", null ],
     [ "notifierObs", "class_jeu.html#acd9b7a2de81b5ca7d2a5c3b7e5e177e2", null ],
     [ "setEtat", "class_jeu.html#a0e5e13b72cd123ac0afef1fa001c9d5f", null ],

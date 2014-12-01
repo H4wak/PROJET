@@ -31,6 +31,6 @@ var searchData=
   ['getsortilege',['getSortilege',['../class_carte.html#a787e408176618c033f3ca3f2477d954e',1,'Carte']]],
   ['getstack',['getStack',['../class_deck.html#ae325fade14ad5ae5912d06d0b85a85af',1,'Deck']]],
   ['gettaille',['getTaille',['../class_deck.html#a34272f22ad41d349f7b347c07fd0cbb4',1,'Deck']]],
-  ['getvue',['getVue',['../class_jeu.html#a6a98e2284176a68e9096a331d7da75e7',1,'Jeu']]],
+  ['getvue',['getVue',['../class_jeu.html#a2f39c9ab947721e35f78a0e187722ce6',1,'Jeu']]],
   ['guerrier',['Guerrier',['../class_guerrier.html#a08622f52e49c7fd2695ce215b3ad9aec',1,'Guerrier']]]
 ];
