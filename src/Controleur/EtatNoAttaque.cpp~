@@ -50,11 +50,13 @@ void EtatNoAttaque::finTour()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui afficher les choix du Joueur disponibles pour cet Etat et les exécute si le Joueur entre les numéros associés.
+*/
 int EtatNoAttaque::afficherChoixEtat()
 {
 	int choix = -1;
-	int choixcarte;
-	int choixcarte1, choixcarte2;
+	
 	bool malinvoc;
 	
 	

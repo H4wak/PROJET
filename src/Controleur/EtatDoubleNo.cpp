@@ -49,6 +49,9 @@ void EtatDoubleNo::finTour()
   jeu->jouer();
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui affiche les choix du Joueur disponibles pour cet Etat et les exécute si le Joueur entre les numéros associés.
+*/
 int EtatDoubleNo::afficherChoixEtat()
 {
 	int choix = -1;

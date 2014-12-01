@@ -25,6 +25,7 @@ class FinDeJeu : public Observer
 		
 	
 	public:
+		
 		FinDeJeu(Jeu* j);
 		~FinDeJeu();
 		void actualiser();

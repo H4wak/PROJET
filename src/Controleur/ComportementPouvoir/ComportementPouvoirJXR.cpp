@@ -21,7 +21,7 @@ ComportementPouvoirJXR::ComportementPouvoirJXR(Joueur* j)
 
 
 /**
-* Methode qui applique le pouvoir heroique du Mage
+* Methode qui applique le pouvoir heroique de JXR
 */
 void ComportementPouvoirJXR::pouvoir()
 {

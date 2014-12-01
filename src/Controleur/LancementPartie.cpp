@@ -29,6 +29,9 @@ LancementPartie::~LancementPartie()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Méthode utilisée dans le Main pour lancer une partie (Création des Joueurs, du Jeu ect)
+*/
 void LancementPartie::lancerPartie()
 {
 	string nom1,nom2;

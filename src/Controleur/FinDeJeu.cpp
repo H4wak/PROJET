@@ -34,7 +34,6 @@ FinDeJeu::~FinDeJeu()
 /////////////////////////////////////////////////////////////////////////
 /**
 * Methode qui actualise le jeu
-
 */
 void FinDeJeu::actualiser()
 {

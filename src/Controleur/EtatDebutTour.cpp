@@ -51,7 +51,7 @@ void EtatDebutTour::finTour()
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Methode qui termine le tour en cours, et lance le suivant
+* Methode qui affiche les choix du Joueur disponibles pour cet Etat et les exécute si le Joueur entre les numéros associés.
 */
 int EtatDebutTour::afficherChoixEtat()
 {

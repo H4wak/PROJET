@@ -49,12 +49,13 @@ void EtatDoubleNo::finTour()
   jeu->jouer();
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui afficher les choix du Joueur disponibles pour cet Etat et les exécute si le Joueur entre les numéros associés.
+*/
 int EtatDoubleNo::afficherChoixEtat()
 {
 	int choix = -1;
-	int choixcarte;
-	int choixcarte1, choixcarte2;
-	int pdmn = jeu->getJoueurCourant()->getPdm();
+
 	
 	
 	cout << "\nETAT DOUBLE NO\n" << endl;

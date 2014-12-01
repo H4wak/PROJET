@@ -20,7 +20,7 @@ ComportementPouvoirChasseur::ComportementPouvoirChasseur(Joueur* j)
 
 
 /**
-* Methode qui applique le pouvoir heroique du guerrier
+* Methode qui applique le pouvoir heroique du Chasseur
 */
 void ComportementPouvoirChasseur::pouvoir()
 {

@@ -50,6 +50,9 @@ void EtatNoAttaque::finTour()
 }
 
 /////////////////////////////////////////////////////////////////////////
+/**
+* Methode qui affiche les choix du Joueur disponibles pour cet Etat et les exécute si le Joueur entre les numéros associés.
+*/
 int EtatNoAttaque::afficherChoixEtat()
 {
 	int choix = -1;
