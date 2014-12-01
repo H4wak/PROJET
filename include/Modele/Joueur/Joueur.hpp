@@ -9,7 +9,6 @@
 #include <list>
 #include <vector>
 #include "Deck/Deck.hpp"
-
 #include "../../Controleur/ComportementPouvoir/ComportementPouvoir.hpp"
 
 

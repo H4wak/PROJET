@@ -15,9 +15,9 @@
 
 class Guerrier: public Joueur
 {   
-   private :
-    
+
    public :
+      //Constructeur/Destructeur
       Guerrier(std::string nom, std::string fichier);
       ~Guerrier();
    

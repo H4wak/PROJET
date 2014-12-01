@@ -12,7 +12,7 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Constructeur.
+* Constructeur qui associe au JXR le comportement du pouvoir du JXR.
 */
 JXR::JXR(string nom,string fichier): Joueur(nom,fichier)
 {

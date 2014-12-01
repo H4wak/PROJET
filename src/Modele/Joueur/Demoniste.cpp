@@ -12,7 +12,7 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Constructeur.
+* Constructeur qui associe au Demoniste le comportement du pouvoir du Demoniste
 */
 Demoniste::Demoniste(string nom,string fichier): Joueur(nom,fichier)
 {

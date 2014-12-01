@@ -15,9 +15,9 @@
 
 class JXR: public Joueur
 {   
-   private :
-    
+
    public :
+      //Constructeur/Destructeur
       JXR(std::string nom, std::string fichier);
       ~JXR();
    

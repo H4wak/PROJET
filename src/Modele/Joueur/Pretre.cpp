@@ -12,7 +12,7 @@ using namespace std; // seulement dans le .cpp !
 
 /////////////////////////////////////////////////////////////////////////
 /**
-* Constructeur.
+* Constructeur qui associe au Pretre le comportement du pouvoir du Pretre
 */
 Pretre::Pretre(string nom,string fichier): Joueur(nom,fichier)
 {
